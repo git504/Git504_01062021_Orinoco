@@ -1,6 +1,5 @@
 # Orinoco
-![GitHub Logo](Git504_01042021_Orinoco/Ressources)
-Format: ![ORINOCO LOGO](url)
+![ORINOCO LOGO](Ressources/logo.png)
 
 Cinquième projet du parcours développeur web chez OpenClassrooms.
 
