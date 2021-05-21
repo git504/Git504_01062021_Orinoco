@@ -9,7 +9,9 @@ Il ne s'agit là que d'un MVP, aucune réelle gestion des transaction n'est effe
 
 Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisateur.
 
-## Cahier des charges
+## Cahier des charges : se rendre dans projet => backlogs
+
+Pour en savoir plus, veuillez consulter le ***document complet*** disponible [ici](<https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P5/P5_Spe%CC%81cifications%20fonctionnelles%20Orinoco%20(2).pdf>)
 
 ### TODO
 
@@ -45,11 +47,6 @@ Pour tester simplement l'application web, rendez-vous sur [github.com/git504](ht
 Ouvrez simplement le fichier index.html, aucun serveur n'est requis.
 
 Pour le développement, il est conseillé d'utiliser l'extension "Live Server" de Visual Studio Code
-
-## Documents
-
-Pour en savoir plus, veuillez consulter le document complet disponible [ici](<https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P5/P5_Spe%CC%81cifications%20fonctionnelles%20Orinoco%20(2).pdf>)
-
 
 ## Prerequis 
 
