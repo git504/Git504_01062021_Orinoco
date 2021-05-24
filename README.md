@@ -58,12 +58,11 @@ Pour le développement, il est conseillé d'utiliser l'extension "Live Server" d
 
 ## Prerequis 
 
-Pour faire fonctionner ce projet, vous avez besoin de ***Node et npm d'installés sur votre machine***
-
+Pour faire fonctionner ce projet, vous avez besoin de `npm` : ***Node et npm d'installés sur votre machine***
 ## Installation
 
-**Clonez ce dépot**, dans le ***dossier du back-end (JWDP5); lancez npm install dans votre console.*** 
+**Clonez ce dépot**, dans le ***dossier du back-end (JWDP5); lancez `npm install` dans votre console.*** 
 Une fois tous les modules téléchargés, lancez node server dans la console ;-)
-Par défaut le serveur fonctionne en ***localhost avec le port 3000.***
+Par défaut le serveur fonctionne en `localhost` e.g. `Listening on port 3001`.
 
 - [x] http://localhost:3000/api/cameras
