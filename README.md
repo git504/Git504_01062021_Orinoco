@@ -9,6 +9,14 @@ Il ne s'agit là que d'un MVP, aucune réelle gestion des transaction n'est effe
 
 Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisateur.
 
+**Thankie** to my Coach OpenClassrooms Amouzoun ; DEVELOPPEUR FULLSTACK WEB ET MOBILE
+[Amouzoun](https://creamind.fr/)
+[Amouzoun](https://github.com/benytto888Z)
+
+**Thankie** to my friend Louis ; DEVELOPPEUR FRONTEND WEB
+[louisallard](https://www.louisallard.fr/)
+[louisallard](https://github.com/Louis-Allard)
+
 ## Cahier des charges : monGitHub/Projects/Orinoco · BackLog · GitHub
 
 Pour en savoir plus, veuillez consulter le ***document complet*** disponible [ici](<https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P5/P5_Spe%CC%81cifications%20fonctionnelles%20Orinoco%20(2).pdf>)
@@ -57,3 +65,5 @@ Pour faire fonctionner ce projet, vous avez besoin de ***Node et npm d'installé
 **Clonez ce dépot**, dans le ***dossier du back-end (JWDP5); lancez npm install dans votre console.*** 
 Une fois tous les modules téléchargés, lancez node server dans la console ;-)
 Par défaut le serveur fonctionne en ***localhost avec le port 3000.***
+
+[] http://localhost:3000/api/cameras
