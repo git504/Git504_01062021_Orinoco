@@ -63,7 +63,7 @@ Pour faire fonctionner ce projet, vous avez besoin de `npm`
 
 **Clonez ce dépot**, dans le ***dossier du back-end (JWDP5); 
 lancez `npm install` dans votre console.*** 
-Une fois tous les modules téléchargés, lancez node server dans la console ;-) avec la commande 'npm start'
+Une fois tous les modules téléchargés, lancez node server dans la console ;-) avec la commande `npm start`
 Par défaut le serveur fonctionne en `localhost` e.g. `Listening on port 3001`.
 
 - [x] http://localhost:3000/api/cameras
