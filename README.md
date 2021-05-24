@@ -10,12 +10,12 @@ Il ne s'agit là que d'un MVP, aucune réelle gestion des transaction n'est effe
 Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisateur.
 
 **Thankie** to my Coach OpenClassrooms Amouzoun ; DEVELOPPEUR FULLSTACK WEB ET MOBILE
-[Amouzoun](https://creamind.fr/)
-[Amouzoun](https://github.com/benytto888Z)
+[website](https://creamind.fr/)
+[Github](https://github.com/benytto888Z)
 
 **Thankie** to my friend Louis ; DEVELOPPEUR FRONTEND WEB
-[louisallard](https://www.louisallard.fr/)
-[louisallard](https://github.com/Louis-Allard)
+[website](https://www.louisallard.fr/)
+[Github](https://github.com/Louis-Allard)
 
 ## Cahier des charges : monGitHub/Projects/Orinoco · BackLog · GitHub
 
