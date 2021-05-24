@@ -61,9 +61,9 @@ Pour le développement, il est conseillé d'utiliser l'extension "Live Server" d
 Pour faire fonctionner ce projet, vous avez besoin de `npm`
 ## Installation
 
-1/ **Clonez ce dépot**, allez dans le dossier **backend** ; 
-2/ **Lancez** `npm install` dans votre console ;
-3/ **Lancez** node server dans la console avec la commande `npm start` ;
-4/ Par défaut le serveur fonctionne en `localhost` e.g. `Listening on port 3001`.
+* **Clonez ce dépot**, allez dans le dossier **backend** ; 
+* **Lancez** `npm install` dans votre console ;
+* **Lancez** node server dans la console avec la commande `npm start` ;
+* Par défaut le serveur fonctionne en `localhost` e.g. `Listening on port 3001`.
 
 - [x] http://localhost:3000/api/cameras
