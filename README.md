@@ -1,5 +1,5 @@
 # Orinoco
-![ORINOCO LOGO](Ressources/logo.png)
+![ORINOCO LOGO](livrables/Ressources/logo.png)
 
 Cinquième projet du parcours développeur web chez OpenClassrooms.
 
@@ -9,13 +9,13 @@ Il ne s'agit là que d'un MVP, aucune réelle gestion des transaction n'est effe
 
 Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisateur.
 
-**Thankie** to my Coach OpenClassrooms Amouzoun ; DEVELOPPEUR FULLSTACK WEB ET MOBILE
-[website](https://creamind.fr/)
-[Github](https://github.com/benytto888Z)
+**Thankie** to my Coach OpenClassrooms Amouzoun . DEVELOPPEUR FULLSTACK WEB ET MOBILE ;
+- [x] [website](https://creamind.fr/)
+- [x] [Github](https://github.com/benytto888Z)
 
-**Thankie** to my friend Louis ; DEVELOPPEUR FRONTEND WEB
-[website](https://www.louisallard.fr/)
-[Github](https://github.com/Louis-Allard)
+**Thankie** to my friend Louis Allard . DEVELOPPEUR FRONTEND WEB ;
+- [x] [website](https://www.louisallard.fr/)
+- [x] [Github](https://github.com/Louis-Allard)
 
 ## Cahier des charges : monGitHub/Projects/Orinoco · BackLog · GitHub
 
@@ -66,4 +66,4 @@ Pour faire fonctionner ce projet, vous avez besoin de ***Node et npm d'installé
 Une fois tous les modules téléchargés, lancez node server dans la console ;-)
 Par défaut le serveur fonctionne en ***localhost avec le port 3000.***
 
-[] http://localhost:3000/api/cameras
+- [x] http://localhost:3000/api/cameras
