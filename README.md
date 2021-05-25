@@ -65,6 +65,6 @@ Pour faire fonctionner ce projet, vous avez besoin de `npm`
 * **Ouvrez** le terminal ;
 * Par défaut le serveur fonctionne en `localhost`
   
-`cd backend
-npm install
-npm start`
+* `cd backend
+* npm install
+* npm start`
