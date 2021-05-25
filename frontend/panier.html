@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <title>Votre panier</title>
+    <meta name="description" content="Votre Panier. Orinoco vente de caméras vintage">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link href="./src/css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/b4a8f51e6a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <body>
+        <!--HEADER-->
+        <header>
+            <div class="container-fluid-nav">
+                <nav class="col navbar navbar-expand d-flex justify-content-around">
+                    <a class="navbar-brand" href="index.html"><i class="fas fa-shopping-cart"></i>Orinoco</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Panier(<span id="Numberarticle"></span>)</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!--MAIN-->
+        <main class="Mainpanier">
+            <div class="container" id="panier">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-center">Votre panier :</h1>
+                    </div>
+                </div>
+
+                <div class="row text-center" id="mainform">
+                    <div class="col" id="leftform">
+                        <div id="Sectionpanier">
+                            <p id="panierVide">Votre panier est vide.</p>
+                        </div>
+                    </div>
+                    <div class="col" id="rightform">
+                        <div id="Sectionformulaire">
+                            <p>Veuillez remplir ce formulaire afin d'effectuer le paiement de votre commande.</p>
+                            <form method="post" id="formulaire">
+                                <fieldset> <!--Identité-->
+                                    <legend>Civilité</legend>
+                                    <div class="row identité">
+                                        <label for="Nomform" class="labelform">Nom :</label>
+                                        <input type="text" id="Nomform" name="Nomform" placeholder="Nom" required>
+                                    </div>
+                                    <div class="row identité">
+                                        <label for="Prénom" class="labelform">Prénom :</label>
+                                        <input type="text" name="Prénom" id="Prénom" placeholder="Prénom" required>
+                                    </div>
+                                    <div class="row identité">
+                                        <label for="Email" class="labelform">Adresse mail :</label>
+                                        <input type="email" name="Email" id="Email" placeholder="Email" required>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="facturation"> <!--Adresse de facturation-->
+                                    <legend>Adresse de facturation</legend>
+                                    <div class="row identité">
+                                        <label for="Adresse" class="labelform">Adresse :</label>
+                                        <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
+                                    </div>
+                                    <div class="row identité">
+                                        <label for="Ville" class="labelform">Ville :</label>
+                                        <input type="text" name="Ville" id="Ville" placeholder="Ville" required>
+                                    </div>
+                                    <div class=" row identité">
+                                        <label for="Codepostal" class="labelform">Code postal :</label>
+                                        <input type="number" name="Codepostal" id="Codepostal" placeholder="Code postal" required>
+                                    </div>
+                                </fieldset>
+                                <button type="submit" class="btn" id="formbutton">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--JS SCRIPT-->
+            <script src="./fonctions.js"></script>
+            <script src="./panier.js"></script>
+            
+            <!--JS BOOTSTRAP-->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        </main>
+    </body>
+</html>

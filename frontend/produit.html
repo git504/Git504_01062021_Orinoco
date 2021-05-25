@@ -2,15 +2,13 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8"/>
-        <title>Caméras Vintage</title>
-        <meta name="description" content="Vente de caméras vintage.">
+        <title>Produit séléctionné</title>
+        <meta name="description" content="Votre séléction.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
         <link href="./src/css/style.css" rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/b4a8f51e6a.js" crossorigin="anonymous"></script>
-       
-         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
 
@@ -25,7 +23,7 @@
                             <a class="nav-link" href="index.html">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="panier.html">Panier(<span id="Numberarticle"></span>)</a>
+                            <a class="nav-link" href="panier.html">Panier (<span id="Numberarticle"></span>)</a>
                         </li>
                     </ul>
                 </nav>
@@ -33,38 +31,41 @@
         </header>
 
         <!--MAIN-->
-        <main>
+        <main class="Mainproduit">
             <div class="container">
-                <div class="jumbotron text-white jumbotron-image" style="background-image: url(./images/lentille.jpg);">
-                    <h1>Bienvenue sur Orinoco !</h1>
+                <div class="row">
+                    <div class="col">
+                        <div id="Selectionproduit">
+                            <label for="lentille">Choisissez la lentille de votre caméra:</label><br />
+                            <select name="lentille" id="lentille"></select>
+                            <div id="Descriptionproduit"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div id="Produits"></div>
+                        <div id="Quantité">
+                            <label for="Nombre" id="Quantitéproduit">Quantité</label><br />
+                            <select name="Nombre" id="Nombre">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-primary" id="Boutonpanier">Ajouter au panier</button>
                     </div>
                 </div>
             </div>
-
-            <!--FOOTER-->
-            <footer class="Footerindex">
-                <div class="container">
-                    <div class="row" id="rowfooter">
-                        <div class="col">
-                            Orinoco, site-e commerce. 
-                        </div>
-                        <div class="col">
-                            Copyright © 2020.
-                        </div>
-                        <div class="col">
-                            Tous droits réservés.
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
             <!--JS SCRIPT-->
             <script src="./fonctions.js"></script>
-            <script src="./index.js"></script>
+            <script src="./produit.js"></script>
+            
             <!--JS BOOTSTRAP-->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

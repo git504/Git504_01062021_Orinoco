@@ -31,7 +31,7 @@ Pour en savoir plus, veuillez consulter le ***document complet*** disponible [ic
 - [x] Création d'une page présentant les détails d'un produit et la possibilité de l'ajouter au panier.
 - [x] Création d'une page panier contenant la liste des produits présents ainsi qu'un formulaire pour effectuer l'achat
 - [x] Création d'une page de remerciement après achat
-- [x] Les pages devront être créés en HTML, CSS (frameworks de votre choix acceptés) et vanilla javascript (sans framework)
+- [x] Les pages devront être créés en HTML, CSS (frameworks de votre choix acceptés) et vanilla javascript (sans framework) 
 
 ### Qualité de code
 
@@ -60,9 +60,12 @@ Pour le développement, il est conseillé d'utiliser l'extension "Live Server" d
 
 Pour faire fonctionner ce projet, vous avez besoin de `npm`
 ## Installation
-
-* **Clonez ce dépot**, allez dans le dossier **backend** ; 
-* **Lancez** `npm install` dans votre console ;
+cd front
+npm install
+npm start
+* **Clonez** ce dépot ;
+* **Ouvrez** le terminal `cd backend`; 
+* **Lancez** `npm install` dans le terminal ;
 * **Lancez** node server dans la console avec la commande `npm start` ;
 * Par défaut le serveur fonctionne en `localhost` e.g. `Listening on port 3001`.
 

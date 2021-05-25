@@ -1,0 +1,302 @@
+@charset "UTF-8";
+.navbar {
+  background-color: rgba(0, 0, 0, 0.897);
+}
+.navbar a {
+  background: linear-gradient(to right, #de8621, #8f5bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+}
+.navbar i {
+  background: linear-gradient(to right, #de8621, #8f5bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px;
+}
+
+#panier h1, #panier #mainform, #panier button {
+  margin-top: 3vw;
+}
+#panier #leftform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#panier #rightform label {
+  margin-right: 5px;
+}
+#panier #rightform input {
+  margin-bottom: 5px;
+}
+
+#formbutton {
+  background-color: #8f5bfe;
+  border: 1px solid black;
+}
+
+main {
+  background-color: #ececec;
+}
+
+.Footerindex {
+  position: relative;
+  bottom: 0;
+  margin-top: 100px;
+  max-width: 100vw;
+  text-align: center;
+}
+
+/*Jumbotron*/
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron h1 {
+  text-shadow: 0px 0px 10px black;
+}
+
+/*API*/
+.Block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.Imageproduit {
+  width: 226px;
+  height: 150px;
+}
+
+.B2 {
+  margin-left: 20px;
+  border-radius: 5%;
+  box-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.B2 h2 {
+  text-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+}
+
+@media all and (max-width: 960px) {
+  #rowfooter .col {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+@media all and (max-width: 760px) {
+  .Imageproduit {
+    width: 151px;
+    height: 100px;
+  }
+
+  .navbar-expand .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .navbar a {
+    font-size: 15px;
+  }
+
+  .B2 h2 {
+    text-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+    font-size: 1rem;
+  }
+
+  #rowfooter .col {
+    font-size: 15px;
+  }
+}
+.Mainproduit {
+  background-color: #ececec;
+  min-height: 100vh;
+}
+
+#Selectionproduit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#Selectionproduit label {
+  margin-top: 10px;
+}
+#Selectionproduit select {
+  margin-top: -20px;
+}
+
+.Footerproduit {
+  position: relative;
+  bottom: 0;
+  margin-top: 100px;
+  max-width: 100vw;
+  text-align: center;
+}
+
+#Boutonpanier {
+  color: #8f5bfe;
+  border-color: #8f5bfe;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 50px;
+}
+#Boutonpanier:hover {
+  background-color: #8f5bfe;
+  color: #ececec;
+}
+
+#Quantité {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#Quantité label {
+  margin-top: 10px;
+}
+#Quantité select {
+  margin-top: -20px;
+}
+
+/*API*/
+.Blockdescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.Imagedescription {
+  width: 226px;
+  height: 150px;
+}
+
+.B2description {
+  margin-left: 50px;
+  width: 30vw;
+}
+
+@media all and (max-width: 760px) {
+  .Imagedescription {
+    width: 151px;
+    height: 100px;
+  }
+
+  .Blockdescription {
+    margin-top: 20px;
+    flex-direction: column;
+    width: 90vw;
+  }
+  .Blockdescription .B2description {
+    width: 90vw;
+    margin-top: 20px;
+  }
+}
+.Mainpanier {
+  background-color: #ececec;
+  min-height: 100vh;
+}
+
+.Footerpanier {
+  position: relative;
+  bottom: 0;
+  margin-top: 100px;
+  max-width: 100vw;
+  text-align: center;
+}
+
+#Containerfooterpanier {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/*TABLEAU RECAPITULATIF DU PANIER*/
+.tableauPanier {
+  border: 2px solid black;
+  width: 30vw;
+  margin-right: 20px;
+}
+
+.tableauHeaderLigne {
+  border-bottom: 2px solid black;
+}
+
+.tableauFooterLigne {
+  width: 100%;
+  color: #8f5bfe;
+}
+
+#articleLigne {
+  border-bottom: 2px solid black;
+}
+
+#articleImage {
+  width: 181px;
+  height: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*FORMULAIRE*/
+.labelform {
+  min-width: 180px;
+}
+
+/*MEDIA*/
+@media all and (max-width: 960px) {
+  #Sectionformulaire {
+    margin-top: 20px;
+  }
+
+  .identité {
+    padding-left: 80px;
+  }
+}
+@media all and (max-width: 760px) {
+  #articleImage {
+    width: 151px;
+    height: 100px;
+  }
+
+  .tableauPanier {
+    border: 2px solid black;
+    width: 30vw;
+    margin-right: 0px;
+  }
+}
+.Mainconfirmation {
+  background-color: #ececec;
+  min-height: 100vh;
+}
+
+#h1confirmation {
+  margin-top: 50px;
+  font-size: 3rem;
+}
+
+#Sectionconfirmation {
+  margin-top: 80px;
+  font-size: 1.5rem;
+}
+
+.Footerconfirmation {
+  position: relative;
+  bottom: 0;
+  margin-top: 100px;
+  max-width: 100vw;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
