@@ -60,11 +60,9 @@ Pour le développement, il est conseillé d'utiliser l'extension "Live Server" d
 
 Pour faire fonctionner ce projet, vous avez besoin de `npm`
 ## Installation
-
-* **Clonez** ce dépot ;
-* **Ouvrez** le terminal ;
-* Par défaut le serveur fonctionne en `localhost`
   
-* `cd backend
-* npm install
-* npm start`
+* `cd backend`
+* `npm install`
+* `npm start`
+
+* Par défaut le serveur fonctionne en `localhost`
