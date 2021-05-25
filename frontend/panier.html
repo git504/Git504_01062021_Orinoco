@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
     <meta charset="utf-8"/>
     <title>Votre panier</title>
     <meta name="description" content="Votre Panier. Orinoco vente de caméras vintage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link href="./src/css/style.css" rel="stylesheet">
+        <!-- Link feuille de style CSS -->
+        <link href="./src/css/style.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/b4a8f51e6a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-
+        <!-- Link librairie FontAwesome -->
+        <script src="https://kit.fontawesome.com/b4a8f51e6a.js" crossorigin="anonymous"></script>
+       
+        <!-- Link Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <body>
         <!--HEADER-->
         <header>
@@ -22,8 +25,7 @@
                             <a class="nav-link" href="index.html">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Panier(<span id="Numberarticle"></span>)</a>
-                        </li>
+                            <a class="nav-link" href="#"></i> Panier <i class="fas fa-cart-plus"></i><span id="Numberarticle"></span></a>
                     </ul>
                 </nav>
             </div>
@@ -34,37 +36,37 @@
             <div class="container" id="panier">
                 <div class="row">
                     <div class="col">
-                        <h1 class="text-center">Votre panier :</h1>
+                        <h1 class="text-center">Votre panier</h1>
                     </div>
                 </div>
 
                 <div class="row text-center" id="mainform">
                     <div class="col" id="leftform">
                         <div id="Sectionpanier">
-                            <p id="panierVide">Votre panier est vide.</p>
+                            <p id="panierVide">Votre panier est vide</p>
                         </div>
                     </div>
                     <div class="col" id="rightform">
                         <div id="Sectionformulaire">
-                            <p>Veuillez remplir ce formulaire afin d'effectuer le paiement de votre commande.</p>
+                            <p>MES INFORMATIONS PERSONNELLES</p>
                             <form method="post" id="formulaire">
                                 <fieldset> <!--Identité-->
                                     <legend>Civilité</legend>
                                     <div class="row identité">
-                                        <label for="Nomform" class="labelform">Nom :</label>
+                                        <label for="Nomform" class="labelform">Nom : </label>
                                         <input type="text" id="Nomform" name="Nomform" placeholder="Nom" required>
                                     </div>
                                     <div class="row identité">
-                                        <label for="Prénom" class="labelform">Prénom :</label>
+                                        <label for="Prénom" class="labelform">Prénom : </label>
                                         <input type="text" name="Prénom" id="Prénom" placeholder="Prénom" required>
                                     </div>
                                     <div class="row identité">
-                                        <label for="Email" class="labelform">Adresse mail :</label>
+                                        <label for="Email" class="labelform">E-mail : </label>
                                         <input type="email" name="Email" id="Email" placeholder="Email" required>
                                     </div>
                                 </fieldset>
                                 <fieldset class="facturation"> <!--Adresse de facturation-->
-                                    <legend>Adresse de facturation</legend>
+                                    <legend>Facturation</legend>
                                     <div class="row identité">
                                         <label for="Adresse" class="labelform">Adresse :</label>
                                         <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
@@ -78,7 +80,7 @@
                                         <input type="number" name="Codepostal" id="Codepostal" placeholder="Code postal" required>
                                     </div>
                                 </fieldset>
-                                <button type="submit" class="btn" id="formbutton">Envoyer</button>
+                                <button type="submit" class="btn" id="formbutton">Valider</button>
                             </form>
                         </div>
                     </div>
