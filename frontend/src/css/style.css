@@ -1,15 +1,22 @@
 @charset "UTF-8";
 .navbar {
-  background-color: rgba(0, 0, 0, 0.897);
+  background-color: #313131;
 }
+
+* {
+  font-family:monospace
+  
+}
+
 .navbar a {
-  background: linear-gradient(to right, #de8621, #8f5bfe);
+  background-color: #fffff3;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 30px;
+  font-family: monospace;
 }
 .navbar i {
-  background: linear-gradient(to right, #de8621, #8f5bfe);
+  background-color : #fffff3;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-right: 10px;
@@ -17,6 +24,7 @@
 
 #panier h1, #panier #mainform, #panier button {
   margin-top: 3vw;
+  font-size: 17px;
 }
 #panier #leftform {
   display: flex;
@@ -31,12 +39,13 @@
 }
 
 #formbutton {
-  background-color: #8f5bfe;
+  background-color: #313131;
+  color:  #FFFFF3;
   border: 1px solid black;
 }
 
 main {
-  background-color: #ececec;
+  background-color: #fffff3;
 }
 
 .Footerindex {
@@ -45,6 +54,7 @@ main {
   margin-top: 100px;
   max-width: 100vw;
   text-align: center;
+  color: #313131;
 }
 
 /*Jumbotron*/
@@ -52,10 +62,17 @@ main {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.9;
 }
 
 .jumbotron h1 {
-  text-shadow: 0px 0px 10px black;
+ /* text-shadow: 0px 0px 10px black; */
+  color: #FFFFF3;
+  font-size:x-large;
+  font-family: monospace;
+  font-weight: bolder;
+  margin-left: 3rem;
+  margin-top: 4rem;
 }
 
 /*API*/
@@ -74,13 +91,13 @@ main {
 .B2 {
   margin-left: 20px;
   border-radius: 5%;
-  box-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+  box-shadow: #313131;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
 .B2 h2 {
-  text-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+  text-shadow: 0 1px 0 #313131, 0 -1px 0 #313131;
 }
 
 @media all and (max-width: 960px) {
@@ -103,10 +120,11 @@ main {
 
   .navbar a {
     font-size: 15px;
+    color: #313131;
   }
 
   .B2 h2 {
-    text-shadow: 0 1px 0 #8f5bfe, 0 -1px 0 #de8621;
+    text-shadow: #313131;
     font-size: 1rem;
   }
 
@@ -115,7 +133,7 @@ main {
   }
 }
 .Mainproduit {
-  background-color: #ececec;
+  background-color: #fffff3;
   min-height: 100vh;
 }
 
@@ -142,16 +160,16 @@ main {
 }
 
 #Boutonpanier {
-  color: #8f5bfe;
-  border-color: #8f5bfe;
+  color: #313131;
+  border-color: black;
   margin-left: auto;
   margin-right: auto;
   display: block;
   margin-top: 50px;
 }
 #Boutonpanier:hover {
-  background-color: #8f5bfe;
-  color: #ececec;
+  background-color: #4f4b4b;
+  color: black;
 }
 
 #Quantité {
@@ -204,7 +222,7 @@ main {
   }
 }
 .Mainpanier {
-  background-color: #ececec;
+  background-color: #FFFFF3;
   min-height: 100vh;
 }
 
@@ -235,12 +253,20 @@ main {
 
 .tableauFooterLigne {
   width: 100%;
-  color: #8f5bfe;
+  color: black;
 }
 
 #articleLigne {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid 343410;
 }
+
+.infos {
+color:  #313131;
+font-size: small;
+font-family: monospace;
+}
+
+
 
 #articleImage {
   width: 181px;
@@ -271,13 +297,13 @@ main {
   }
 
   .tableauPanier {
-    border: 2px solid black;
+    border: 2px solid 343410;
     width: 30vw;
     margin-right: 0px;
   }
 }
 .Mainconfirmation {
-  background-color: #ececec;
+  background-color: #FFFFF3;
   min-height: 100vh;
 }
 
