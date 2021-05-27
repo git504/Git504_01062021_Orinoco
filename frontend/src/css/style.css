@@ -5,7 +5,7 @@
 
 * {
   font-family:monospace
-  
+
 }
 
 .navbar a {
@@ -90,11 +90,13 @@ main {
 
 .B2 {
   margin-left: 20px;
-  border-radius: 5%;
+  border-radius: 15px;
+  border: solid 1px #313131;
   box-shadow: #313131;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 .B2 h2 {
   text-shadow: 0 1px 0 #313131, 0 -1px 0 #313131;
