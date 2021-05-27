@@ -1,5 +1,5 @@
 # Orinoco
-![Logo](livrables/Ressources/logo.png)
+![Logo](frontend/livrables/Ressources/logo.png)
 
 Cinquième projet du parcours développeur web chez OpenClassrooms.
 
