@@ -6,10 +6,7 @@ const getProduit = function () {
     return fetch (url)
     //.then((response) => response.json())
     .then(function(response){
-        for(let i in Array) {
-            JSON.parse(url)
-            console.log(Array)
-        }
+        let parseCam = JSON.parse(url);
     })
     .then(function(response){
         const myurl = window.location.href; 
