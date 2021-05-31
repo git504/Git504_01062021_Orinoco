@@ -4,7 +4,6 @@ const urlOrder = "http://localhost:3000/api/cameras/order";
 
 
 /*Appel de l'API*/
-const url = "http://localhost:3000/api/cameras";
 const getProduit = function () {
     return fetch (url)
     .then((response) => response.json())
