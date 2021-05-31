@@ -14,9 +14,9 @@ async function selectionProduit() {
         response.json().then(function(data){
             mesVariables = data;
         })
-    }
+    })
     .catch(error => alert("Erreur : " + error))
-    )
+    
 }
 selectionProduit();
 
