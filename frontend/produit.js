@@ -15,7 +15,8 @@ const getProduit = function () {
         //On recupere dans le .json que les elements qui nous interessent;
         //On match l'ID  qui correspond a la selection;
         for (let p of searchParams) {
-            console.log(p[1]);
+            const id = p[1]
+            console.log(id);
           }
         console.log(searchParams.get("id"))
 
