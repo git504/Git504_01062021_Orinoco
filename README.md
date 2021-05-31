@@ -13,7 +13,7 @@ Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisat
 - [x] [website](https://creamind.fr/)
 - [x] [Github](https://github.com/benytto888Z)
 
-**Thankie** to my friend Louis Allard . DEVELOPPEUR FRONTEND WEB ;
+**Thankie** to my friend Louis Allard . DEVELOPPEUR FRONT WEB ;
 - [x] [website](https://www.louisallard.fr/)
 - [x] [Github](https://github.com/Louis-Allard)
 
@@ -66,3 +66,4 @@ Pour faire fonctionner ce projet, vous avez besoin de `npm`
 * `npm start`
 
 * Par défaut le serveur fonctionne en `localhost`
+* `http://localhost:3000/api/cameras`
