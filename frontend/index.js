@@ -21,15 +21,6 @@ const getCams = function () {
 getCams();
 /*##########################################################*/
 
-
-/*fonction création éléments, attribution*/
-function create(type, Qualified, nomType){
-    let nomVariable = document.createElement(type);
-    nomVariable.setAttribute(Qualified, nomType);
-    return nomVariable;
-}
-
-
 /*LISTE INDEX*/
 async function listeCams() {
     const cams = await getCams();
