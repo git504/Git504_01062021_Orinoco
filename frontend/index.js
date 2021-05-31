@@ -33,41 +33,26 @@ function create(type, Qualified, nomType){
 /*LISTE INDEX*/
 async function listeCams() {
     const cams = await getCams();
+    console.log(cams);
 
     /*On vient cibler la balise section ayant l'id "Produits"*/
     let produits = document.getElementById("Produits");
-
+    let listOfCam = "";
     /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
-    cams.forEach((cameras) => {
-        /*Utilisation de la fonction Create*/
-        let produitContainer = create("div", "class", "Block");
-        let produitB1 = create("div", "class", "B1");
-        let produitB2 = create("div", "class", "B2");
-        let produitNom = create("h2", "class", "Nomproduits");
-        let produitLien = create("a", "href", "produit.html?id=" + cameras._id);
-        let produitPrix = create("p", "class", "Prixproduit");
-        let produitImage = create("img", "src", cameras.imageUrl);
-
-    /*Attributs suplémentaires*/
-        produitImage.setAttribute("alt", "image du produit");
-        produitImage.setAttribute("class", "Imageproduit");
-        
-    /*Hiérarchisation des élements crées*/ 
-        produits.appendChild(produitContainer);
-        produitContainer.appendChild(produitB1);
-        produitContainer.appendChild(produitB2);
-        produitB1.appendChild(produitImage);
-        produitB2.appendChild(produitNom);
-        produitB2.appendChild(produitPrix);
-        produitB2.appendChild(produitLien);
-
-    /*Attribution des données aux élements créees*/
-        produitNom.textContent = cameras.name;
-        produitPrix.textContent = cameras.price / 100 + " " + "euros";
-        produitLien.textContent = "En savoir plus ...";
-        produitLien.style.color = "#313131";
-        produitLien.style.fontWeight = "bold";
-    });
+    cams.forEach((cam) => {
+      listOfCam += `
+      <div class="Block">
+          <div class="B1">
+            <img src= ${cam.imageUrl} alt="image du produit" class="Imageproduit">
+          </div>
+          <div class="B2">
+                      <h2 class="Nomproduits">${cam.name}</h2>
+                      <p class="Prixproduit">${cam.price}</p>
+                      <a href="produit.html?id=${cam._id}" style="color: rgb(49, 49, 49); font-weight: bold;">En savoir plus ...</a>
+          </div>
+      </div>
+      `
+})
+produits.innerHTML = listOfCam;
 };
 listeCams();
-
