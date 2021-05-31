@@ -12,5 +12,6 @@ const getProduit = function () {
 }
 getProduit();
 
-//On recupere dans le .json que les elements qui nous interesse...om match l'_ID  qui correspond a la selection
+//On recupere dans le .json que les elements qui nous interessent;
+//on match l'_ID  qui correspond a la selection;
 
