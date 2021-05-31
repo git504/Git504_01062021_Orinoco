@@ -20,23 +20,24 @@ async function selectionProduit() {
         // Itère sur les paramètres de recherche.
         for (let p of searchParams) {
         console.log(p);
+        //On recupere dans le .json que les elements qui nous interessent;
         console.log(p[1]);
+        const findElement = function (data, camId) {
+            for (let camId of data) {
+            if (p[1] === camId) {
+             return true;
+             }{
+             return false;
+             }
+            }
+            }
+            console.log(findElement);
   }
     })
     .catch(error => alert("Erreur : " + error))
 }
 selectionProduit();
 
-//On recupere dans le .json que les elements qui nous interessent;
+
 //On match l'ID  qui correspond a la selection;
 
-const findElement = function (data, _id) {
-for (let _id of data) {
-if (_id === _id) {
- return true;
- }{
- return false;
- }
-}
-}
-console.log(findElement);
