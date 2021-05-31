@@ -9,7 +9,8 @@ const getProduit = function () {
     .then(function(response){
         const myurl = window.location.href; 
         //Url complète de la page en cours de consultation
-        const id = myurl.searchParams.get("id");
+        //La propriété est accessible en écriture et permet de réaliser une redirection par programmation.
+        const searchParams = new URLSearchParams(myurl)
         //On recupere dans le .json que les elements qui nous interessent;
         //On match l'ID  qui correspond a la selection;
         console.log(id)
