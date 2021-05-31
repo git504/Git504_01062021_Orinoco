@@ -8,7 +8,7 @@ const getProduit = function () {
     .then(function(response){
         return response.json()
     })
-    .catch(function(error) => 
+    .catch(error => alert("Erreur : " + error));
 }
 getproduit();
 
