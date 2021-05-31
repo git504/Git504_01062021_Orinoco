@@ -13,7 +13,8 @@ const getProduit = function () {
         const searchParams = new URLSearchParams(myurl)
         //On recupere dans le .json que les elements qui nous interessent;
         //On match l'ID  qui correspond a la selection;
-        console.log(id)
+        const id = searchParams.get("id");
+        console.log("id")
     })
     .catch(error => alert("Erreur : " + error));
 }
