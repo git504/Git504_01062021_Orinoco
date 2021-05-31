@@ -7,6 +7,7 @@ const getProduit = function () {
     //.then((response) => response.json())
     .then(function(response){
         for(let i in Array) {
+            JSON.parse(url)
             console.log(Array)
         }
     })
