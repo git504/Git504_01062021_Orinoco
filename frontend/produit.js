@@ -1,8 +1,15 @@
 /*PRODUIT SELECTIONNE INDEX*/
-
+const url = "http://localhost:3000/api/cameras";
 /*Création de la variable contenant l'id*/
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
+
+/*fonction création éléments, attribution*/
+function create(type, Qualified, nomType){
+    let nomVariable = document.createElement(type);
+    nomVariable.setAttribute(Qualified, nomType);
+    return nomVariable;
+}
 
 /*Appel du produit séléctionné*/
 let mesVariables; //On stock les données du produit dans cette variable.
@@ -54,15 +61,3 @@ async function selectionProduit() {
     })
 }
 selectionProduit();
-
-/*Ajouter un article au panier*/
-function ajouterAuPanier(){
-    const bouton = document.getElementById("Boutonpanier");
-    bouton.addEventListener("click", async function(){
-        panier.push(mesVariables);
-        localStorage.setItem("monPanier", JSON.stringify(panier));
-        alert("L'article a bien été ajouté à votre panier.")
-        location.reload();
-    });
-};
-ajouterAuPanier();
