@@ -1,12 +1,12 @@
 // API
 const url = "http://localhost:3000/api/cameras";
 
-/*Appel de l'API*/
+//Appel de l'API
 const getProduit = function () {
-    return fetch (url)
+    return fetch ("http://localhost:3000/api/cameras")
     //.then((response) => response.json())
     .then(function(response){
-        let parseCam = JSON.parse(url);
+        let parseCam = JSON.parse("http://localhost:3000/api/cameras");
     })
     .then(function(response){
         const myurl = window.location.href; 
