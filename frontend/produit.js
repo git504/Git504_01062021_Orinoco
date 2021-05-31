@@ -4,7 +4,12 @@ const url = "http://localhost:3000/api/cameras";
 /*Appel de l'API*/
 const getProduit = function () {
     return fetch (url)
-    .then((response) => response.json())
+    //.then((response) => response.json())
+    .then(function(response){
+        for(let i in Array) {
+            console.log(Array)
+        }
+    })
     .then(function(response){
         const myurl = window.location.href; 
         //Url complète de la page en cours de consultation
@@ -27,12 +32,11 @@ getProduit();
 
 const findElement = function (data, _id) {
 for (let _id of data) {
-if ("_id" === "_id") {
+if (_id === _id) {
  return true;
  }{
  return false;
  }
 }
 }
-
 console.log(findElement);
