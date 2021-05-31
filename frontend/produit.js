@@ -26,11 +26,13 @@ getProduit();
 //On match l'ID  qui correspond a la selection;
 
 const findElement = (data, "_id") {
-for (let _id of data) 
+for (let "_id" of data) {
 if ("_id" === "_id") {
  return true;
  }{
  return false;
- }}
+ }
+}
+}
 
- console.log(findElement);
+console.log(findElement);
