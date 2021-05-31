@@ -8,12 +8,15 @@ let camId = searchParams.get("id");
 let mesVariables; //On stock les données du produit dans cette variable.
 
 async function selectionProduit() {
-    fetch(url + "/" + camId).then(function(response).catch(error => alert("Erreur : " + error));
+    fetch(url + "/" + camId)
+    .then(function(response){
         console.log(url);
         response.json().then(function(data){
             mesVariables = data;
         })
-    })
+    }
+    .catch(error => alert("Erreur : " + error))
+    )
 }
 selectionProduit();
 
