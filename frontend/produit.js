@@ -10,5 +10,5 @@ const getProduit = function () {
     })
     .catch(error => alert("Erreur : " + error));
 }
-getproduit();
+getProduit();
 
