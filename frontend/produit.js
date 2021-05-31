@@ -2,7 +2,7 @@
 const url = "http://localhost:3000/api/cameras";
 const urlOrder = "http://localhost:3000/api/cameras/order";
 const myurl = window.location.href //prend l'url de la page produit
-const id = myurl.searchParams.get("id") //on recupere un parametre precis _id
+const id = myurl.searchParams.get("id") //on recupere un parametre precis id
 console.log(id);
 
 /*Appel de l'API*/
