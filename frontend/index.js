@@ -39,7 +39,7 @@ async function listeCams() {
     let produits = document.getElementById("Produits");
     let listOfCam = "";
     /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
-    cams.forEach((cam) => {
+    cams.map((cam) => {
       listOfCam += `
       <div class="Block">
           <div class="B1">
