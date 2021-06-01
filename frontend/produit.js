@@ -5,25 +5,21 @@ const url = "http://localhost:3000/api/cameras";
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
 
-    const getCams = function () {
-        return fetch (url)
-        .then(function(response){
-            return response.json()
-        })
-    }
-    getCams();
+/*Appel du produit séléctionné*/
+let produitOneByOne;//On stock les données du produit dans cette variable.
 
 async function selectionProduit() {
-    const cams = await getCams();
-    console.log(cams);
+    fetch(url + "/" + camId).then(function(response){
+        response.json().then(function(data){
+            produitOneByOne = data;
+            console.log(produitOneByOne);
 
-    /*On vient cibler la balise div ayant pour id Selectionproduit*/
-    let selectionProduit = document.getElementById("Selectionproduit");
-    let produitOneByOne = "";
+        /*On vient cibler la balise div ayant pour id Selectionproduit*/
+        let selectionProduit = document.getElementById("Selectionproduit");
 
-    /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
-    cams.map((cam) => {
-      produitOneByOne = `
+        /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
+        cams.map((cam) => {
+          produitOneByOne = `
                             <label for="lentille">Type de lentille :</label><br>
                             <select name="lentille" id="lentille">
                                 <option value="Type de lentille">${cam.lenses}</option>
@@ -41,7 +37,9 @@ async function selectionProduit() {
                                 </div>
                             </div>
                             `
-});
+            }
+        )
+    });
 selectionProduit.innerHTML = produitOneByOne;                  
 };
 selectionProduit();
@@ -56,7 +54,7 @@ function ajouterAuPanier(){
     bouton.addEventListener("click", async function(){
         panier.push(produitOneByOne);
         localStorage.setItem("monPanier", JSON.stringify(panier));
-        alert("L'article a bien été ajouté à votre panier.")
+        alert("l'article est dans votre Bag ;-)")
         location.reload();
     });
 };
