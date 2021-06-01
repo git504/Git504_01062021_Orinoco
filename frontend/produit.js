@@ -23,7 +23,7 @@ async function selectionProduit() {
 
     /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
     cams.map((cam) => {
-      produitOneByOne += `
+      produitOneByOne = `
                             <label for="lentille">Type de lentille :</label><br>
                             <select name="lentille" id="lentille">
                                 <option value="Type de lentille">${cam.lenses}</option>
@@ -45,7 +45,6 @@ async function selectionProduit() {
 selectionProduit.innerHTML = produitOneByOne;                  
 };
 selectionProduit();
-
 
 
 //On stock le panier dans cette variable
