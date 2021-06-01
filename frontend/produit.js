@@ -5,16 +5,21 @@ const url = "http://localhost:3000/api/cameras";
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
 
-let produitOneByOne = ""; //On stock les données du produit dans cette variable.
-
+    const getCams = function () {
+        return fetch (url)
+        .then(function(response){
+            return response.json()
+        })
+    }
+    getCams();
 
 async function selectionProduit() {
-    fetch(url + "/" + camId).then(function(response){
-        response.json().then(function(data){
-            produitOneByOne = data;
+    const cams = await getCams();
+    console.log(cams);
 
     /*On vient cibler la balise div ayant pour id Selectionproduit*/
     let selectionProduit = document.getElementById("Selectionproduit");
+    let produitOneByOne = "";
 
     /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
     cams.map((cam) => {
