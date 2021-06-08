@@ -1,5 +1,32 @@
 let total = 0; //On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
 
+/*Création du panier utilisateur si besoin*/
+if (localStorage.getItem("monPanier")){
+    console.log("Panier OK");
+}else{
+    console.log("Création du panier");
+    let init = [];
+    localStorage.setItem("monPanier", (JSON.stringify(init)));
+}
+
+let panier = JSON.parse(localStorage.getItem("monPanier")); //On stock le panier dans cette variable
+
+/*Fonction affichant le nombre d'article dans le panier dans le nav*/
+function nombreArticle (){
+    let numberArticle = document.getElementById("Numberarticle");
+    numberArticle.textContent = panier.length;
+}
+nombreArticle();
+
+/*Fonction de suppression d'article du panier*/
+function suppressionArticle (i){
+    console.log("suppression article i :", i);
+    panier.splice(i, 1); //suppression de l'element i du tableau;  
+    localStorage.clear(); //on vide le storage avant de le mettre à jour;
+    localStorage.setItem("monPanier", JSON.stringify(panier)); //maj du panier sans l'élément i;
+    window.location.reload();
+}
+
 /*Affichage du panier utilisateur dans la page "panier"*/
 function affichagePanier (){
     if (panier.length > 0){
