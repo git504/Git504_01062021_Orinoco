@@ -1,4 +1,8 @@
+let btnAjouter = document.getElementById("Boutonpanier");
 let divProduit = document.getElementById("Selectionproduit");
+let nombreArticle = document.getElementById("Nombre");
+let intoBag = document.getElementById("Numberarticle");
+let article = {};
 
 /*PRODUIT SELECTIONNE INDEX*/
 const url = "http://localhost:3000/api/cameras";
@@ -15,7 +19,17 @@ const afficherProduit = async () => {
     if (reponse.ok) {
       let produit = await reponse.json();
       //console.log(produit.lenses);
+
       let lenses = "";
+
+      article = {
+        imgUrl: produit.imageUrl,
+        name: produit.name,
+        price: produit.price,
+        description: produit.description,
+        lense: null,
+        quantity: 0,
+      };
 
       //Boucle avec méthode forEach pour implémenter une  liste 'déroulante'
       produit.lenses.forEach((lense) => {
@@ -51,16 +65,27 @@ const afficherProduit = async () => {
 afficherProduit();
 
 //On stock le panier dans cette variable
-let panier = JSON.parse(localStorage.getItem("monPanier"));
+let panier = [];
+panier = JSON.parse(localStorage.getItem("monPanier"));
 
 /*Ajouter un article au panier*/
 function ajouterAuPanier() {
-  const bouton = document.getElementById("Boutonpanier");
-  bouton.addEventListener("click", async function () {
-    panier.push(produitHtml);
+  const lenseIntoBag = document.getElementById("lentille");
+  alert(nombreArticle.value);
+  intoBag.textContent = nombreArticle.value;
+
+  article = {
+    imgUrl: produit.imageUrl,
+    name: produit.name,
+    price: produit.price,
+    description: produit.description,
+    lense: lenseIntoBag.value,
+    quantity: parseInt(nombreArticle.value),
+  };
+
+  panier.push(article);
+  console.log(panier);
     localStorage.setItem("monPanier", JSON.stringify(panier));
-    alert("l'article est dans votre Bag ;-)");
+    alert("Votre article est ajouté ;-)");
     location.reload();
-  });
 }
-ajouterAuPanier();
