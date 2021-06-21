@@ -3,6 +3,7 @@ let divProduit = document.getElementById("Selectionproduit");
 let nombreArticle = document.getElementById("Nombre");
 let intoBag = document.getElementById("Numberarticle");
 let article = {};
+let produit = {};
 
 /*PRODUIT SELECTIONNE INDEX*/
 const url = "http://localhost:3000/api/cameras";
@@ -17,7 +18,7 @@ const afficherProduit = async () => {
   try {
     let reponse = await fetch(`http://localhost:3000/api/cameras/${camId}`);
     if (reponse.ok) {
-      let produit = await reponse.json();
+      produit = await reponse.json();
       //console.log(produit.lenses);
 
       let lenses = "";
@@ -34,7 +35,7 @@ const afficherProduit = async () => {
       //Boucle avec méthode forEach pour implémenter une  liste 'déroulante'
       produit.lenses.forEach((lense) => {
         lenses += `                               
-            <option value="Type de lentille">${lense}</option>
+            <option value="${lense}">${lense}</option>
             `;
       });
 
@@ -66,13 +67,17 @@ afficherProduit();
 
 //On stock le panier dans cette variable
 let panier = [];
+//console.log(panier);
 panier = JSON.parse(localStorage.getItem("monPanier"));
+console.log(panier);
 
 /*Ajouter un article au panier*/
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
-  alert(nombreArticle.value);
-  intoBag.textContent = nombreArticle.value;
+  console.log(lenseIntoBag.value);
+  //const lenseIntoBag = document.getElementById("lentille");
+  alert(nombreArticle.value + " dans le panier ...");
+ // intoBag.textContent = nombreArticle.value;
 
   article = {
     imgUrl: produit.imageUrl,
@@ -82,10 +87,15 @@ function ajouterAuPanier() {
     lense: lenseIntoBag.value,
     quantity: parseInt(nombreArticle.value),
   };
+  console.log(article);
 
+
+
+  
   panier.push(article);
-  console.log(panier);
-    localStorage.setItem("monPanier", JSON.stringify(panier));
-    alert("Votre article est ajouté ;-)");
-    location.reload();
+  console.log(article);
+
+  localStorage.setItem("monPanier", JSON.stringify(panier));
+  //console.log(localStorage.getItem("monPanier"));
+  location.reload();
 }
