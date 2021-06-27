@@ -24,6 +24,7 @@ const afficherProduit = async () => {
       let lenses = "";
 
       article = {
+        _id: produit._id,
         imgUrl: produit.imageUrl,
         name: produit.name,
         price: produit.price,
@@ -80,6 +81,7 @@ function ajouterAuPanier() {
   // intoBag.textContent = nombreArticle.value;
 
   article = {
+    _id: produit._id,
     imgUrl: produit.imageUrl,
     name: produit.name,
     price: produit.price,

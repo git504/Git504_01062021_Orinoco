@@ -72,48 +72,51 @@ const commandeUser = {
 };
 
 function sendCommand(event) {
-  alert("commande envoyé");
+  event.preventDefault();
+
   //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide.
-  /*      if (panier.length == 0) {
-        alert("Votre panier est vide.");
-      } else {
-        //Récupération des champs
-        let nomForm = document.getElementById("Nomform").value;
-        let prenomForm = document.getElementById("Prénom").value;
-        let emailForm = document.getElementById("Email").value;
-        let adresseForm = document.getElementById("Adresse").value;
-        let villeForm = document.getElementById("Ville").value;
-        let codePostalForm = document.getElementById("Codepostal").value;
 
-        //Création de l'objet formulaireObjet
-        commandeUser.contact = {
-          firstName: prenomForm,
-          lastName: nomForm,
-          address: adresseForm,
-          city: villeForm,
-          email: emailForm,
-        };
+  if (panier.length == 0) {
+    alert("Votre panier est vide.");
+  } else {
+    //Récupération des champs
+    let nomForm = document.getElementById("Nomform").value;
+    let prenomForm = document.getElementById("Prénom").value;
+    let emailForm = document.getElementById("Email").value;
+    let adresseForm = document.getElementById("Adresse").value;
+    let villeForm = document.getElementById("Ville").value;
+    let codePostalForm = document.getElementById("Codepostal").value;
 
-        //Création du tableau des articles
-        panier.forEach((articlePanier) =>
-          commandeUser.products.push(articlePanier._id)
-        );
+    //Création de l'objet formulaireObjet
+    commandeUser.contact = {
+      firstName: prenomForm,
+      lastName: nomForm,
+      address: adresseForm,
+      city: villeForm,
+      email: emailForm,
+    };
+    console.log(commandeUser);
+    console.log(panier);
+    //Création du tableau des articles
+    panier.forEach((articlePanier) =>
+      commandeUser.products.push(articlePanier._id)
+    );
 
-        //Envoi des données récupérées
-        const optionsFetch = {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(commandeUser),
-        };
+    //Envoi des données récupérées
+    const optionsFetch = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(commandeUser),
+    };
 
-        fetch(urlOrder, optionsFetch).then(function (response) {
-          response.json().then(function (text) {
-            console.log(text.orderId);
-            window.location = `./confirmation.html?id=${text.orderId}&name=${prenomForm}&prix=${total}`;
-          });
-        });
-        localStorage.clear();
-      }*/
+    fetch(getUrl() + "/order", optionsFetch).then(function (response) {
+      response.json().then(function (resOrder) {
+        console.log(resOrder);
+        window.location = `./confirmation.html?id=${resOrder.orderId}&name=${prenomForm}&prix=${total}`;
+      });
+    });
+    localStorage.clear();
+  }
 }
