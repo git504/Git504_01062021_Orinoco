@@ -1,6 +1,4 @@
-
 // API
-const url = "http://localhost:3000/api/cameras";
 
 /*Appel de l'API*/
 
@@ -12,7 +10,7 @@ const url = "http://localhost:3000/api/cameras";
 // getCams();
 
 const getCams = function () {
-    return fetch (url)
+    return fetch (getUrl())
     .then(function(response){
         return response.json()
     })
@@ -23,7 +21,7 @@ getCams();
 /*LISTE INDEX*/
 async function listeCams() {
     const cams = await getCams();
-    console.log(cams);
+    // console.log(cams); 
 
     /*On vient cibler la balise section ayant l'id "Produits"*/
     let produits = document.getElementById("Produits");

@@ -6,7 +6,7 @@ let article = {};
 let produit = {};
 
 /*PRODUIT SELECTIONNE INDEX*/
-const url = "http://localhost:3000/api/cameras";
+// const url = "http://localhost:3000/api/cameras";
 
 /*Création de la variable contenant l'id*/
 const params = new URLSearchParams(window.location.search);
@@ -16,7 +16,7 @@ let produitHtml = "";
 
 const afficherProduit = async () => {
   try {
-    let reponse = await fetch(`http://localhost:3000/api/cameras/${camId}`);
+    let reponse = await fetch(`${getUrl()}/${camId}`);
     if (reponse.ok) {
       produit = await reponse.json();
       //console.log(produit.lenses);
@@ -72,30 +72,29 @@ panier = JSON.parse(localStorage.getItem("monPanier"));
 console.log(panier);
 
 /*Ajouter un article au panier*/
-function ajouterAuPanier() {
-  const lenseIntoBag = document.getElementById("lentille");
-  console.log(lenseIntoBag.value);
-  //const lenseIntoBag = document.getElementById("lentille");
-  alert(nombreArticle.value + " dans le panier ...");
- // intoBag.textContent = nombreArticle.value;
+// function ajouterAuPanier() {
+//   const lenseIntoBag = document.getElementById("lentille");
+//   console.log(lenseIntoBag.value);
+//   //const lenseIntoBag = document.getElementById("lentille");
+//   alert(nombreArticle.value + " dans le panier ...");
+//  // intoBag.textContent = nombreArticle.value;
 
-  article = {
-    imgUrl: produit.imageUrl,
-    name: produit.name,
-    price: produit.price,
-    description: produit.description,
-    lense: lenseIntoBag.value,
-    quantity: parseInt(nombreArticle.value),
-  };
-  console.log(article);
+//   article = {
+//     imgUrl: produit.imageUrl,
+//     name: produit.name,
+//     price: produit.price,
+//     description: produit.description,
+//     lense: lenseIntoBag.value,
+//     quantity: parseInt(nombreArticle.value),
+//   };
+//   console.log(article);
 
+//   panier.push(article);
+//   console.log(article);
 
+//   localStorage.setItem("monPanier", JSON.stringify(panier));
+//   console.log(localStorage.getItem("monPanier"));
+//   // location.reload();
+// }
 
-  
-  panier.push(article);
-  console.log(article);
-
-  localStorage.setItem("monPanier", JSON.stringify(panier));
-  //console.log(localStorage.getItem("monPanier"));
-  location.reload();
-}
+// ajouterAuPanier()
