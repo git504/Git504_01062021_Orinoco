@@ -71,14 +71,10 @@ const commandeUser = {
   products: [],
 };
 
-document
-  .getElementById("formulaire")
-  .addEventListener("submit", function (envoi) {
-    envoi.preventDefault(); //
-
-    function sendCommand(event) {
-      //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide.
-      if (panier.length == 0) {
+function sendCommand(event) {
+  alert("commande envoyé");
+  //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide.
+  /*      if (panier.length == 0) {
         alert("Votre panier est vide.");
       } else {
         //Récupération des champs
@@ -119,6 +115,5 @@ document
           });
         });
         localStorage.clear();
-      }
-    }
-  });
+      }*/
+}
