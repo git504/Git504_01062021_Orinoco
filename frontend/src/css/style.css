@@ -8,6 +8,12 @@
 
 }
 
+.fas.fa-trash-alt:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
 .navbar a {
   background-color: #fffff3;
   -webkit-background-clip: text;
