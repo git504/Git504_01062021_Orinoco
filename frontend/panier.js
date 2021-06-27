@@ -1,10 +1,6 @@
 /*Fonction affichant le nombre d'article dans le panier dans le nav*/
 getPanierQuantity();
 
-
-
-
-
 let total = 0; //On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
 
 /*Création du panier utilisateur si besoin*/
@@ -16,9 +12,10 @@ if (localStorage.getItem("monPanier")) {
   localStorage.setItem("monPanier", JSON.stringify(init));
 }
 
-let panier = JSON.parse(localStorage.getItem("monPanier")); //On stock le panier dans cette variable
-
-
+//On stock le panier dans cette variable
+let panier = JSON.parse(localStorage.getItem("monPanier"));
+console.log(panier);
+console.log("hello");
 
 /*Fonction de suppression d'article du panier*/
 function suppressionArticle(i) {

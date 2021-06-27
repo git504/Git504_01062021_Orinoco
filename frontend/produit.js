@@ -89,6 +89,12 @@ function ajouterAuPanier() {
   console.log(article);
 
   // panierBag est ds le localstorage lecture JSON
+  panierBag.forEach((prod) => {
+    if (prod.name == article.name && prod.lense == article.lense) {
+      prod.quantity = prod.quantity + article.quantity;
+    }
+  });
+
   panierBag.push(article);
   console.log(article);
 
