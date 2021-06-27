@@ -68,8 +68,8 @@ afficherProduit();
 //On stock le panier dans cette variable
 let panier = [];
 //console.log(panier);
-// panier = JSON.parse(localStorage.getItem("monPanier"));
-console.log(panier);
+let panierBag = JSON.parse(localStorage.getItem("monPanier"));
+if (panierBag === null) panierBag = [];
 
 /*Ajouter un article au panier*/
 function ajouterAuPanier() {
@@ -77,7 +77,7 @@ function ajouterAuPanier() {
   console.log(lenseIntoBag.value);
   //const lenseIntoBag = document.getElementById("lentille");
   alert(nombreArticle.value + " dans le panier ...");
- // intoBag.textContent = nombreArticle.value;
+  // intoBag.textContent = nombreArticle.value;
 
   article = {
     imgUrl: produit.imageUrl,
@@ -93,7 +93,8 @@ function ajouterAuPanier() {
   console.log(article);
 
   localStorage.setItem("monPanier", JSON.stringify(panier));
-  // location.reload();
-  console.log(panier);
-}
+  let panierBag = JSON.parse(localStorage.getItem("monPanier"));
 
+  // location.reload();
+  console.log(panierBag);
+}
