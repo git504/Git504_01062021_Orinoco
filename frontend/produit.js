@@ -68,7 +68,7 @@ afficherProduit();
 //On stock le panier dans cette variable
 let panier = [];
 //console.log(panier);
-panier = JSON.parse(localStorage.getItem("monPanier"));
+// panier = JSON.parse(localStorage.getItem("monPanier"));
 console.log(panier);
 
 /*Ajouter un article au panier*/
