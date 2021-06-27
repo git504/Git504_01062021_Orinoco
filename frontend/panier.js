@@ -86,6 +86,10 @@ function sendCommand(event) {
     let adresseForm = document.getElementById("Adresse").value;
     let villeForm = document.getElementById("Ville").value;
     let codePostalForm = document.getElementById("Codepostal").value;
+    console.log(inputRegex(prenomForm));
+    if (!inputRegex(prenomForm)) {
+      alert("uniquement des lettres - min 3");
+    }
 
     //Création de l'objet formulaireObjet
     commandeUser.contact = {
@@ -113,8 +117,8 @@ function sendCommand(event) {
 
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {
       response.json().then(function (resOrder) {
-        console.log(resOrder);
-        window.location = `./confirmation.html?id=${resOrder.orderId}&name=${prenomForm}&prix=${total}`;
+        console.log(resOrder.contact);
+        // window.location = `./confirmation.html?id=${resOrder.orderId}&name=${resOrder.contact.firstName}&prix=${total}`;
       });
     });
     localStorage.clear();
