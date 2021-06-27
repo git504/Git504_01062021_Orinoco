@@ -32,13 +32,23 @@ function affichagePanier() {
     document.getElementById("panierVide").remove();
 
     /*Nous allons présenter le panier à l'utilisateut sous forme de tableau que nous plaçons dans la section "Sectionpanier"*/
-    let tableauSection = document.getElementById("Sectionpanier");
+    let tableauSection = document.querySelector(".Rowsarticle");
 
-    // <!-- <div id="Sectionpanier">
+    let listOfBag = "";
+    /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
+    panier.map((article) => {
+      listOfBag += `
+<tr>
+<td ><img id="articleImage">${article.imgUrl}</td>
+<td>${article.name}</td>
+<td>${article.lense}</td>
+<td>${article.quantity}</td>
+<td>${article.price}</td>
+<td class="fas fa-trash-alt"></td>
+</tr>`;
+    });
 
-    // <table class="tableauPanier"><tr class="tableauHeaderLigne"><th>Article(s)</th><th>Nom(s)</th><th>Prix</th><th>Action</th></tr><tr id="articleLigne"><img id="articleImage" src="http://localhost:3000/images/vcam_1.jpg"><td id="articleNom">Zurss 50S</td><td id="articlePrix">499 euros</td><i id="0" alt="Retirer l'article du panier." class="fas fa-trash-alt" aria-hidden="true"></i></tr><tr class="tableauFooterLigne"><th class="tableauFooterPrixTotal" colspan="4">Prix total: 499 euros</th></tr></table></div> -->
-
-    //Création du tableau
+    // //Création du tableau
     // let tableauPanier = create("table", "class", "tableauPanier");
     // let tableauHeaderLigne = create("tr", "class", "tableauHeaderLigne");
     // let tableauHeaderImage = document.createElement("th");
@@ -48,10 +58,10 @@ function affichagePanier() {
     // let tableauFooterLigne = create("tr", "class", "tableauFooterLigne");
     // let tableauFooterPrixTotal = create("th", "class", "tableauFooterPrixTotal");
 
-    /*Attributs suplémentaires*/
+    // /*Attributs suplémentaires*/
     // tableauFooterPrixTotal.setAttribute("colspan", "4");
 
-    /*Hiérarchisation des élements crées*/
+    // /*Hiérarchisation des élements crées*/
     // tableauSection.appendChild(tableauPanier);
     // tableauPanier.appendChild(tableauHeaderLigne);
     // tableauHeaderLigne.appendChild(tableauHeaderImage);
@@ -59,7 +69,7 @@ function affichagePanier() {
     // tableauHeaderLigne.appendChild(tableauHeaderPrix);
     // tableauHeaderLigne.appendChild(tableauHeaderAction);
 
-    /*Attribution des données aux élements créees*/
+    // /*Attribution des données aux élements créees*/
     // tableauHeaderImage.textContent = "Article(s)";
     // tableauHeaderNom.textContent = "Nom(s)";
     // tableauHeaderPrix.textContent = "Prix";

@@ -3,6 +3,7 @@ let divProduit = document.getElementById("Selectionproduit");
 let nombreArticle = document.getElementById("Nombre");
 let article = {};
 let produit = {};
+let articleExist = false;
 
 /*PRODUIT SELECTIONNE INDEX*/
 // const url = "http://localhost:3000/api/cameras";
@@ -64,9 +65,9 @@ const afficherProduit = async () => {
 };
 afficherProduit();
 
-let panierBag = JSON.parse(localStorage.getItem("monPanier"));
-console.log(panierBag);
-if (panierBag === null) panierBag = [];
+// let panierBag = JSON.parse(localStorage.getItem("monPanier"));
+// console.log(panierBag);
+// if (panierBag === null) panierBag = [];
 
 getPanierQuantity();
 
@@ -86,17 +87,22 @@ function ajouterAuPanier() {
     lense: lenseIntoBag.value,
     quantity: parseInt(nombreArticle.value),
   };
-  console.log(article);
+  // console.log(article);
 
   // panierBag est ds le localstorage lecture JSON
-  panierBag.forEach((prod) => {
+  panierBag.forEach((prod, index) => {
     if (prod.name == article.name && prod.lense == article.lense) {
       prod.quantity = prod.quantity + article.quantity;
+      // localStorage.setItem("monPanier", JSON.stringify(panierBag));
+      // location.reload();
+      articleExist = true;
+      console.log(index);
     }
   });
 
-  panierBag.push(article);
-  console.log(article);
+  if (articleExist == false) {
+    panierBag.push(article);
+  }
 
   localStorage.setItem("monPanier", JSON.stringify(panierBag));
   let panier = JSON.parse(localStorage.getItem("monPanier"));
