@@ -1,7 +1,6 @@
 let btnAjouter = document.getElementById("Boutonpanier");
 let divProduit = document.getElementById("Selectionproduit");
 let nombreArticle = document.getElementById("Nombre");
-let intoBag = document.getElementById("Numberarticle");
 let article = {};
 let produit = {};
 
@@ -65,11 +64,11 @@ const afficherProduit = async () => {
 };
 afficherProduit();
 
-//On stock le panier dans cette variable
-let panier = [];
-//console.log(panier);
 let panierBag = JSON.parse(localStorage.getItem("monPanier"));
+console.log(panierBag);
 if (panierBag === null) panierBag = [];
+
+getPanierQuantity();
 
 /*Ajouter un article au panier*/
 function ajouterAuPanier() {
@@ -89,12 +88,21 @@ function ajouterAuPanier() {
   };
   console.log(article);
 
-  panier.push(article);
+  // panierBag est ds le localstorage lecture JSON
+  panierBag.push(article);
   console.log(article);
 
-  localStorage.setItem("monPanier", JSON.stringify(panier));
-  let panierBag = JSON.parse(localStorage.getItem("monPanier"));
+  localStorage.setItem("monPanier", JSON.stringify(panierBag));
+  let panier = JSON.parse(localStorage.getItem("monPanier"));
 
-  // location.reload();
-  console.log(panierBag);
+  // ce code est rendu inutile grace a location reload
+  // let somme = 0;
+  // panier.forEach((produit) => {
+  //   somme = somme + produit.quantity;
+  // });
+  // intoBag.textContent = somme;
+
+  //pour mette a jour le cart
+  location.reload();
+  console.log(panier);
 }

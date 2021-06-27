@@ -9,26 +9,29 @@
 // }
 // getCams();
 
+getPanierQuantity();
+
+
+
 const getCams = function () {
-    return fetch (getUrl())
-    .then(function(response){
-        return response.json()
-    })
-}
+  return fetch(getUrl()).then(function (response) {
+    return response.json();
+  });
+};
 getCams();
 /*##########################################################*/
 
 /*LISTE INDEX*/
 async function listeCams() {
-    const cams = await getCams();
-    // console.log(cams); 
+  const cams = await getCams();
+  // console.log(cams);
 
-    /*On vient cibler la balise section ayant l'id "Produits"*/
-    let produits = document.getElementById("Produits");
-    let listOfCam = "";
-    /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
-    cams.map((cam) => {
-      listOfCam += `
+  /*On vient cibler la balise section ayant l'id "Produits"*/
+  let produits = document.getElementById("Produits");
+  let listOfCam = "";
+  /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
+  cams.map((cam) => {
+    listOfCam += `
       <div class="Block">
           <div class="B1">
             <img src= ${cam.imageUrl} alt="image du produit" class="Imageproduit">
@@ -39,8 +42,8 @@ async function listeCams() {
                       <a href="produit.html?id=${cam._id}" style="color: rgb(49, 49, 49); font-weight: bold;">En savoir plus ...</a>
           </div>
       </div>
-      `
-})
-produits.innerHTML = listOfCam;
-};
+      `;
+  });
+  produits.innerHTML = listOfCam;
+}
 listeCams();
