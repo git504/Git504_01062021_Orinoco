@@ -72,29 +72,28 @@ panier = JSON.parse(localStorage.getItem("monPanier"));
 console.log(panier);
 
 /*Ajouter un article au panier*/
-// function ajouterAuPanier() {
-//   const lenseIntoBag = document.getElementById("lentille");
-//   console.log(lenseIntoBag.value);
-//   //const lenseIntoBag = document.getElementById("lentille");
-//   alert(nombreArticle.value + " dans le panier ...");
-//  // intoBag.textContent = nombreArticle.value;
+function ajouterAuPanier() {
+  const lenseIntoBag = document.getElementById("lentille");
+  console.log(lenseIntoBag.value);
+  //const lenseIntoBag = document.getElementById("lentille");
+  alert(nombreArticle.value + " dans le panier ...");
+ // intoBag.textContent = nombreArticle.value;
 
-//   article = {
-//     imgUrl: produit.imageUrl,
-//     name: produit.name,
-//     price: produit.price,
-//     description: produit.description,
-//     lense: lenseIntoBag.value,
-//     quantity: parseInt(nombreArticle.value),
-//   };
-//   console.log(article);
+  article = {
+    imgUrl: produit.imageUrl,
+    name: produit.name,
+    price: produit.price,
+    description: produit.description,
+    lense: lenseIntoBag.value,
+    quantity: parseInt(nombreArticle.value),
+  };
+  console.log(article);
 
-//   panier.push(article);
-//   console.log(article);
+  panier.push(article);
+  console.log(article);
 
-//   localStorage.setItem("monPanier", JSON.stringify(panier));
-//   console.log(localStorage.getItem("monPanier"));
-//   // location.reload();
-// }
+  localStorage.setItem("monPanier", JSON.stringify(panier));
+  // location.reload();
+  console.log(panier);
+}
 
-// ajouterAuPanier()
