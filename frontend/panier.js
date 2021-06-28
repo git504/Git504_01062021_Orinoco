@@ -92,7 +92,7 @@ function sendCommand(event) {
       console.log(inputRegex(prenomForm));
       if (!inputRegex(prenomForm)) {
         alert(
-          "Votre PRENOM doit contenir au moins 3 lettres sans caractères spéciaux."
+          "Votre PRENOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres."
         );
       }
 
@@ -100,7 +100,7 @@ function sendCommand(event) {
       console.log(inputRegex(nomForm));
       if (!inputRegex(nomForm)) {
         alert(
-          "Votre NOM doit contenir au moins 3 lettres sans caractères spéciaux."
+          "Votre NOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres."
         );
       }
 
@@ -108,21 +108,21 @@ function sendCommand(event) {
       console.log(inputRegex(villeForm));
       if (!inputRegex(villeForm)) {
         alert(
-          "Votre VILLE doit contenir au moins 3 lettres sans caractères spéciaux."
+          "Votre VILLE ne doit pas contenir de caractères spéciaux."
         );
       }
 
       //mail
       console.log(inputRegexMail(emailForm));
       if (!inputRegexMail(emailForm)) {
-        alert("Votre MAIL ne doit pas contenir de caractères spéciaux.");
+        alert("Votre MAIL ne doit pas contenir de caractères spéciaux et doit contenir @ et un .");
       }
 
       //adresse
       console.log(inputRegexAdresse(adresseForm));
       if (!inputRegexAdresse(adresseForm)) {
         alert(
-          "Votre ADRESSE POSTALE doit contenir au moins 3 lettres sans caractères spéciaux."
+          "Votre ADRESSE POSTALE ne doit pas contenir dde  caractères spéciaux."
         );
       }
     }

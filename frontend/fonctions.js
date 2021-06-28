@@ -20,7 +20,7 @@ function getPanierQuantity() {
 }
 
 function inputRegex(text) {
-  return /^[A-Za-z]{3,20}$/.test(text);
+  return /^[A-Za-z]{1,20}$/.test(text);
 }
 
 function inputRegexMail(textemail) {
@@ -28,5 +28,5 @@ function inputRegexMail(textemail) {
 }
 
 function inputRegexAdresse(textadresse) {
-  return /^[A-Za-z0-9-éàè\s]{10,50}$/.test(textadresse);
+  return /^[A-Za-z0-9-éàè\s]{1,50}$/.test(textadresse);
 }

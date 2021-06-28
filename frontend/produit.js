@@ -5,14 +5,20 @@ let article = {};
 let produit = {};
 let articleExist = false;
 
-/*PRODUIT SELECTIONNE INDEX*/
 
-/*Création de la variable contenant l'id*/
+//------
+// ----- PRODUIT SELECTIONNE INDEX 
+//------
+
+// Création de la variable contenant l'id faisant REF. au dossier backend/routes/camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
-// faisant ref au dossier routes -> camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
 console.log(camId);
 
+
+//------
+// ----- AFFICHER LE PRODUIT
+//------
 let produitHtml = "";
 
 const afficherProduit = async () => {
@@ -73,7 +79,9 @@ afficherProduit();
 
 getPanierQuantity();
 
-/*Ajouter un article au panier*/
+//------
+// ----- AJOUTER UN PRODUIT AU PANIER 
+//------
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
   console.log(lenseIntoBag.value);
@@ -92,7 +100,12 @@ function ajouterAuPanier() {
   };
   // console.log(article);
 
-  // panierBag est ds le localstorage lecture JSON
+
+//------
+// ----- CHOIX DE LA LENTILLE 
+//------
+
+  // 'panierBag' est dans le 'localstorage' en 'JSON', l'objectif est de ne pas créer un objet supplémentaire pour un article identique '_id' avec une même lentille 'lense'.
   panierBag.forEach((prod, index) => {
     if (prod.name == article.name && prod.lense == article.lense) {
       prod.quantity = prod.quantity + article.quantity;
