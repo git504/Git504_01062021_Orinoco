@@ -88,7 +88,7 @@ function sendCommand(event) {
     let codePostalForm = document.getElementById("Codepostal").value;
 
     //TEST INPUT FORMULAIRE
-    
+
     //prenom
     console.log(inputRegex(prenomForm));
     if (!inputRegex(prenomForm)) {
@@ -148,7 +148,7 @@ function sendCommand(event) {
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {
       response.json().then(function (resOrder) {
         console.log(resOrder.contact);
-        // window.location = `./confirmation.html?id=${resOrder.orderId}&name=${resOrder.contact.firstName}&prix=${total}`;
+        window.location = `./confirmation.html?id=${resOrder.orderId}&name=${resOrder.contact.firstName}&prix=${total}`;
       });
     });
     localStorage.clear();
