@@ -1,6 +1,20 @@
+//Récupération des champs
+let nomForm = document.getElementById("Nomform");
+let prenomForm = document.getElementById("Prénom");
+let emailForm = document.getElementById("Email");
+let adresseForm = document.getElementById("Adresse");
+let villeForm = document.getElementById("Ville");
+let codePostalForm = document.getElementById("Codepostal");
+
 /*Fonction affichant le nombre d'article dans le panier dans le nav*/
 getPanierQuantity();
+let inputError = false;
+let messageError = "";
 
+
+//------
+// ----- LISTE ARTICLE DANS LE PANIER
+//------
 let total = 0; //On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
 
 /*Création du panier utilisateur si besoin*/
@@ -17,7 +31,10 @@ let panier = JSON.parse(localStorage.getItem("monPanier"));
 console.log(panier);
 console.log("hello");
 
-/*Fonction de suppression d'article du panier*/
+//------
+// ----- SUPPRESSION DU PRODUIT DANS LE PANIER
+//------
+
 function suppressionArticle(i) {
   console.log("suppression article i :", i);
   panier.splice(i, 1); //suppression --> 1 de l'element i du tableau;
@@ -26,12 +43,15 @@ function suppressionArticle(i) {
   window.location.reload();
 }
 
-/*Affichage du panier utilisateur dans la page "panier"*/
+//------
+// ----- AFFICHAGE DU PANIER UTILISATEUR
+//------
+
 function affichagePanier() {
   if (panier.length > 0) {
     document.getElementById("panierVide").remove();
 
-    /*Nous allons présenter le panier à l'utilisateut sous forme de tableau que nous plaçons dans la section "Sectionpanier"*/
+    /*Nous allons présenter le panier à l'utilisateut sous forme de tableau que nous plaçons dans la div "Sectionpanier"*/
     let tableauSection = document.querySelector(".Rowsarticle");
 
     let listOfBag = "";
@@ -62,79 +82,82 @@ function affichagePanier() {
 }
 affichagePanier();
 
-/*FORMULAIRE*/
+//------
+// ----- FORMULAIRE
+//------
 
-/*Validation de formulaire*/
-//Création de l'objet à envoyer, regroupant le formulaire et les articles
+//Création de l'objet à envoyer, regroupant le formulaire et les articles. Sera utile pour la page confirmation.
 const commandeUser = {
   contact: {},
   products: [],
 };
 
+//------
+// ----- TEST INPUT DE VALIDATION DU FORMULAIRE
+//------
+function testRegex() {
+  //prenom
+  console.log(inputRegex(prenomForm.value));
+  if (!inputRegex(prenomForm.value)) {
+    messageError =
+      "Votre PRENOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
+    inputError = true;
+  }
+
+  //nom
+  console.log(inputRegex(nomForm.value));
+  if (!inputRegex(nomForm.value)) {
+    messageError =
+      "Votre NOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
+    inputError = true;
+  }
+
+  //ville
+  console.log(inputRegex(villeForm.value));
+  if (!inputRegex(villeForm.value)) {
+    messageError = "Votre VILLE ne doit pas contenir de caractères spéciaux.";
+    inputError = true;
+  }
+
+  //mail
+  console.log(inputRegexMail(emailForm.value));
+  if (!inputRegexMail(emailForm.value)) {
+    messageError =
+      "Votre MAIL ne doit pas contenir de caractères spéciaux et doit contenir @ et un .";
+    inputError = true;
+  }
+
+  //adresse
+  console.log(inputRegexAdresse(adresseForm.value));
+  if (!inputRegexAdresse(adresseForm.value)) {
+    messageError =
+      "Votre ADRESSE POSTALE ne doit pas contenir dde  caractères spéciaux.";
+    inputError = true;
+  }
+}
+
 function sendCommand(event) {
   event.preventDefault();
 
-  //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide.
+  
+  testRegex();
+
+  //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide et que le formulaire est true.
   if (panier.length == 0) {
     alert("Votre panier est vide.");
+  } else if (inputError) {
+    alert(messageError);
   } else {
-    //Récupération des champs
-    let nomForm = document.getElementById("Nomform").value;
-    let prenomForm = document.getElementById("Prénom").value;
-    let emailForm = document.getElementById("Email").value;
-    let adresseForm = document.getElementById("Adresse").value;
-    let villeForm = document.getElementById("Ville").value;
-    let codePostalForm = document.getElementById("Codepostal").value;
+    //------
+    // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT
+    //------
 
-    //TEST INPUT FORMULAIRE
-    function testRegex() {
-      //prenom
-      console.log(inputRegex(prenomForm));
-      if (!inputRegex(prenomForm)) {
-        alert(
-          "Votre PRENOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres."
-        );
-      }
-
-      //nom
-      console.log(inputRegex(nomForm));
-      if (!inputRegex(nomForm)) {
-        alert(
-          "Votre NOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres."
-        );
-      }
-
-      //ville
-      console.log(inputRegex(villeForm));
-      if (!inputRegex(villeForm)) {
-        alert(
-          "Votre VILLE ne doit pas contenir de caractères spéciaux."
-        );
-      }
-
-      //mail
-      console.log(inputRegexMail(emailForm));
-      if (!inputRegexMail(emailForm)) {
-        alert("Votre MAIL ne doit pas contenir de caractères spéciaux et doit contenir @ et un .");
-      }
-
-      //adresse
-      console.log(inputRegexAdresse(adresseForm));
-      if (!inputRegexAdresse(adresseForm)) {
-        alert(
-          "Votre ADRESSE POSTALE ne doit pas contenir dde  caractères spéciaux."
-        );
-      }
-    }
-    testRegex();
-
-    //Création de l'objet formulaireObjet
     commandeUser.contact = {
-      firstName: prenomForm,
-      lastName: nomForm,
-      address: adresseForm,
-      city: villeForm,
-      email: emailForm,
+      firstName: prenomForm.value,
+      lastName: nomForm.value,
+      address: adresseForm.value,
+      city: villeForm.value,
+      email: emailForm.value,
     };
     console.log(commandeUser);
     console.log(panier);
@@ -143,7 +166,9 @@ function sendCommand(event) {
       commandeUser.products.push(articlePanier._id)
     );
 
-    //Envoi des données récupérées
+    //------
+    // ----- ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE
+    //------
     const optionsFetch = {
       headers: {
         "Content-Type": "application/json",
@@ -152,6 +177,10 @@ function sendCommand(event) {
       body: JSON.stringify(commandeUser),
     };
 
+    //------
+    // ----- TRAITEMENT DE LA REPONSE POUR SE DIRIGER VERS LA PAGE CONFIRMATION
+    //------
+    
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {
       response.json().then(function (resOrder) {
         console.log(resOrder.contact);

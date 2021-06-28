@@ -119,7 +119,8 @@ function ajouterAuPanier() {
   if (articleExist == false) {
     panierBag.push(article);
   }
-
+  
+// Il faut passer des chaines de caractères
   localStorage.setItem("monPanier", JSON.stringify(panierBag));
   let panier = JSON.parse(localStorage.getItem("monPanier"));
 
