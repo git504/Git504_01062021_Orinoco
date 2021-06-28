@@ -75,7 +75,6 @@ function sendCommand(event) {
   event.preventDefault();
 
   //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide.
-
   if (panier.length == 0) {
     alert("Votre panier est vide.");
   } else {
@@ -88,38 +87,46 @@ function sendCommand(event) {
     let codePostalForm = document.getElementById("Codepostal").value;
 
     //TEST INPUT FORMULAIRE
+    function testRegex() {
+      //prenom
+      console.log(inputRegex(prenomForm));
+      if (!inputRegex(prenomForm)) {
+        alert(
+          "Votre PRENOM doit contenir au moins 3 lettres sans caractères spéciaux."
+        );
+      }
 
-    //prenom
-    console.log(inputRegex(prenomForm));
-    if (!inputRegex(prenomForm)) {
-      alert("Votre prénom doit contenir au moins 3 lettres sans caractères spéciaux.");
+      //nom
+      console.log(inputRegex(nomForm));
+      if (!inputRegex(nomForm)) {
+        alert(
+          "Votre NOM doit contenir au moins 3 lettres sans caractères spéciaux."
+        );
+      }
+
+      //ville
+      console.log(inputRegex(villeForm));
+      if (!inputRegex(villeForm)) {
+        alert(
+          "Votre VILLE doit contenir au moins 3 lettres sans caractères spéciaux."
+        );
+      }
+
+      //mail
+      console.log(inputRegexMail(emailForm));
+      if (!inputRegexMail(emailForm)) {
+        alert("Votre MAIL ne doit pas contenir de caractères spéciaux.");
+      }
+
+      //adresse
+      console.log(inputRegexAdresse(adresseForm));
+      if (!inputRegexAdresse(adresseForm)) {
+        alert(
+          "Votre ADRESSE POSTALE doit contenir au moins 3 lettres sans caractères spéciaux."
+        );
+      }
     }
-
-    //nom
-    console.log(inputRegex(nomForm));
-    if (!inputRegex(nomForm)) {
-      alert("Votre prénom doit contenir au moins 3 lettres sans caractères spéciaux.");
-    }
-
-    //ville
-    console.log(inputRegex(villeForm));
-    if (!inputRegex(villeForm)) {
-      alert("Votre ville doit contenir au moins 3 lettres sans caractères spéciaux.");
-    }
-
-    //mail
-    console.log(inputRegexMail(emailForm));
-    if (!inputRegexMail(emailForm)) {
-      alert("Votre e-mail ne doit pas contenir de caractères spéciaux.");
-    }
-
-    //adresse
-    console.log(inputRegexAdresse(adresseForm));
-    if (!inputRegexAdresse(adresseForm)) {
-      alert("Votre adresse doit contenir au moins 3 lettres sans caractères spéciaux.");
-    }
-
- 
+    testRegex();
 
     //Création de l'objet formulaireObjet
     commandeUser.contact = {

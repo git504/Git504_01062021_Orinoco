@@ -12,24 +12,28 @@
 getPanierQuantity();
 
 
-
+// ----- AFFICHER LE TABLEAU D'OBJET CAMERA -----
+// Promise
+// fetch("monlien").then((res) => res);
 const getCams = function () {
   return fetch(getUrl()).then(function (response) {
     return response.json();
   });
 };
 getCams();
-/*##########################################################*/
+console.log(getCams());
 
-/*LISTE INDEX*/
+// ----- AFFICHER LA LISTE SUR LA PAGE INDEX.HTML -----
 async function listeCams() {
   const cams = await getCams();
   // console.log(cams);
+  // attend que le await soit exécuté avant de faire la suite
 
-  /*On vient cibler la balise section ayant l'id "Produits"*/
+  // On vient cibler la balise section ayant l'id "Produits"
   let produits = document.getElementById("Produits");
   let listOfCam = "";
-  /*On crée l'affichage de la liste des produits proposés qui sera présente sur l'index*/
+
+  // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map. 
   cams.map((cam) => {
     listOfCam += `
       <div class="Block">
