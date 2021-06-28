@@ -6,7 +6,7 @@ let produit = {};
 let articleExist = false;
 
 //------
-// ----- PRODUIT SELECTIONNE INDEX (*plan test)
+// ----- PRODUIT SELECTIONNE PAR ID API (*plan test)
 //------
 
 // Création de la variable contenant l'id faisant REF. au dossier backend/routes/camera.js -> router.get('/:id', cameraCtrl.getOneCamera);

@@ -13,7 +13,7 @@ getPanierQuantity();
 
 
 //------
-// ----- LISTE ARTICLE DANS LE PANIER (*plan test)
+// ----- AFFICHE TOTAL PRODUIT (*plan test)
 //------
 
 //On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
@@ -138,10 +138,14 @@ function testRegex() {
   }
 }
 
+//------
+// ----- FORMULAIRE ENTIEREMENT VALIDE (*plan test)
+//------
+
 function sendCommand(event) {
   event.preventDefault();
 
-  
+  //on appel la fonction testRegex
   testRegex();
 
   //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide et que le formulaire est true.
@@ -150,6 +154,7 @@ function sendCommand(event) {
   } else if (inputError) {
     alert(messageError);
   } else {
+
     //------
     // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT  (*plan test)
     //------
@@ -162,6 +167,7 @@ function sendCommand(event) {
       email: emailForm.value,
     };
     console.log(commandeUser);
+    //console.log(contact);
     console.log(panier);
     //Création du tableau des articles
     panier.forEach((articlePanier) =>
@@ -169,7 +175,7 @@ function sendCommand(event) {
     );
 
     //------
-    // ----- ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE  (*plan test)
+    // ----- POST DE LA COMMANDE : ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE  (*plan test)
     //------
     const optionsFetch = {
       headers: {
@@ -180,7 +186,7 @@ function sendCommand(event) {
     };
 
     //------
-    // ----- TRAITEMENT DE LA REPONSE POUR SE DIRIGER VERS LA PAGE CONFIRMATION  (*plan test)
+    // ----- TRAITEMENT RÉPONSE OK POUR SE DIRIGER VERS LA PAGE CONFIRMATION  (*plan test)
     //------
 
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {

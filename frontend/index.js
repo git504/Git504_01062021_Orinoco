@@ -12,7 +12,7 @@
 getPanierQuantity();
 
 //------
-// FETCH AFFICHER LE TABLEAU D'OBJET CAMERA (*plan test)
+// FETCH Get Cams de l’API - AFFICHER LE TABLEAU D'OBJET CAMERA (*plan test)
 //------
 
 // Promise
@@ -26,7 +26,7 @@ getCams();
 console.log(getCams());
 
 //------
-// ----- AFFICHER LA LISTE SUR LA PAGE INDEX.HTML (*plan test)
+// ----- AFFICHER LA LISTE DES CAMERAS SUR LA PAGE INDEX.HTML (*plan test)
 //------
 async function listeCams() {
   const cams = await getCams();
