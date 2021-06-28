@@ -86,10 +86,40 @@ function sendCommand(event) {
     let adresseForm = document.getElementById("Adresse").value;
     let villeForm = document.getElementById("Ville").value;
     let codePostalForm = document.getElementById("Codepostal").value;
+
+    //TEST INPUT FORMULAIRE
+    
+    //prenom
     console.log(inputRegex(prenomForm));
     if (!inputRegex(prenomForm)) {
-      alert("uniquement des lettres - min 3");
+      alert("Votre prénom doit contenir au moins 3 lettres sans caractères spéciaux.");
     }
+
+    //nom
+    console.log(inputRegex(nomForm));
+    if (!inputRegex(nomForm)) {
+      alert("Votre prénom doit contenir au moins 3 lettres sans caractères spéciaux.");
+    }
+
+    //ville
+    console.log(inputRegex(villeForm));
+    if (!inputRegex(villeForm)) {
+      alert("Votre ville doit contenir au moins 3 lettres sans caractères spéciaux.");
+    }
+
+    //mail
+    console.log(inputRegexMail(emailForm));
+    if (!inputRegexMail(emailForm)) {
+      alert("Votre e-mail ne doit pas contenir de caractères spéciaux.");
+    }
+
+    //adresse
+    console.log(inputRegexAdresse(adresseForm));
+    if (!inputRegexAdresse(adresseForm)) {
+      alert("Votre adresse doit contenir au moins 3 lettres sans caractères spéciaux.");
+    }
+
+ 
 
     //Création de l'objet formulaireObjet
     commandeUser.contact = {
