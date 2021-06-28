@@ -78,7 +78,7 @@
                                     <legend>Civilité</legend>
                                     <div class="row identité">
                                         <label for="Nomform" class="labelform">Nom : </label>
-                                        <input type="text" id="Nomform" name="Nomform" placeholder="Nom"  pattern="[a-zA-Z0-9]+" minlength="3" required>
+                                        <input type="text" id="Nomform" name="Nomform" placeholder="Nom"   required>
                                     </div>
                                     <div class="row identité">
                                         <label for="Prénom" class="labelform">Prénom : </label>
@@ -86,18 +86,18 @@
                                     </div>
                                     <div class="row identité">
                                         <label for="Email" class="labelform">E-mail : </label>
-                                        <input type="email" name="Email" id="Email" placeholder="Email" pattern=".+@tutsplus\.com|.+@envato\.com"required>
+                                        <input type="email" name="Email" id="Email" placeholder="Email" pattern="[^ @]*@[^ @]*" required>
                                     </div>
                                 </fieldset>
                                 <fieldset class="facturation"> <!--Adresse de facturation-->
                                     <legend>Facturation</legend>
                                     <div class="row identité">
                                         <label for="Adresse" class="labelform">Adresse :</label>
-                                        <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" pattern="[a-zA-Z0-9]+" minlength="3" required>
+                                        <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
                                     </div>
                                     <div class="row identité">
                                         <label for="Ville" class="labelform">Ville :</label>
-                                        <input type="text" name="Ville" id="Ville" placeholder="Ville" pattern="[a-zA-Z0-9]+" minlength="3" required>
+                                        <input type="text" name="Ville" id="Ville" placeholder="Ville" required>
                                     </div>
                                     <div class=" row identité">
                                         <label for="Codepostal" class="labelform">Code postal :</label>
