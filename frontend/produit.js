@@ -5,9 +5,8 @@ let article = {};
 let produit = {};
 let articleExist = false;
 
-
 //------
-// ----- PRODUIT SELECTIONNE INDEX 
+// ----- PRODUIT SELECTIONNE INDEX (*plan test)
 //------
 
 // Création de la variable contenant l'id faisant REF. au dossier backend/routes/camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
@@ -15,9 +14,8 @@ const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
 console.log(camId);
 
-
 //------
-// ----- AFFICHER LE PRODUIT
+// ----- AFFICHER LE PRODUIT (*plan test)
 //------
 let produitHtml = "";
 
@@ -26,7 +24,7 @@ const afficherProduit = async () => {
     let reponse = await fetch(`${getUrl()}/${camId}`);
     if (reponse.ok) {
       produit = await reponse.json();
-      //console.log(produit.lenses);
+      console.log(produit);
 
       let lenses = "";
 
@@ -39,8 +37,13 @@ const afficherProduit = async () => {
         lense: null,
         quantity: 0,
       };
+      console.log(article);
 
-      //Boucle avec méthode forEach pour implémenter une  liste 'déroulante'
+      //------
+      // ----- CHOIX DES LENTILLES (*plan test)
+      //------
+
+      //Boucle forEach pour implémenter une  liste 'déroulante'
       produit.lenses.forEach((lense) => {
         lenses += `                               
             <option value="${lense}">${lense}</option>
@@ -80,7 +83,7 @@ afficherProduit();
 getPanierQuantity();
 
 //------
-// ----- AJOUTER UN PRODUIT AU PANIER 
+// ----- AJOUTER UN PRODUIT AU PANIER (*plan test)
 //------
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
@@ -100,10 +103,9 @@ function ajouterAuPanier() {
   };
   // console.log(article);
 
-
-//------
-// ----- CHOIX DE LA LENTILLE 
-//------
+  //------
+  // ----- CHOIX DE LA LENTILLE (*plan test)
+  //------
 
   // 'panierBag' est dans le 'localstorage' en 'JSON', l'objectif est de ne pas créer un objet supplémentaire pour un article identique '_id' avec une même lentille 'lense'.
   panierBag.forEach((prod, index) => {
@@ -119,8 +121,8 @@ function ajouterAuPanier() {
   if (articleExist == false) {
     panierBag.push(article);
   }
-  
-// Il faut passer des chaines de caractères
+
+  // Il faut passer des chaines de caractères
   localStorage.setItem("monPanier", JSON.stringify(panierBag));
   let panier = JSON.parse(localStorage.getItem("monPanier"));
 
@@ -131,7 +133,9 @@ function ajouterAuPanier() {
   // });
   // intoBag.textContent = somme;
 
-  //pour mette a jour le cart
+  //------
+  // ----- METTRE A JOUR LE PANIER
+  //------
   location.reload();
   console.log(panier);
 }

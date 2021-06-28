@@ -5,19 +5,21 @@ let emailForm = document.getElementById("Email");
 let adresseForm = document.getElementById("Adresse");
 let villeForm = document.getElementById("Ville");
 let codePostalForm = document.getElementById("Codepostal");
-
-/*Fonction affichant le nombre d'article dans le panier dans le nav*/
-getPanierQuantity();
 let inputError = false;
 let messageError = "";
 
+//Fonction affichant le nombre d'article dans le panier dans le nav.
+getPanierQuantity();
+
 
 //------
-// ----- LISTE ARTICLE DANS LE PANIER
+// ----- LISTE ARTICLE DANS LE PANIER (*plan test)
 //------
-let total = 0; //On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
 
-/*Création du panier utilisateur si besoin*/
+//On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
+let total = 0; 
+
+//Création du panier utilisateur si besoin
 if (localStorage.getItem("monPanier")) {
   console.log("Panier OK");
 } else {
@@ -29,10 +31,10 @@ if (localStorage.getItem("monPanier")) {
 //On stock le panier dans cette variable
 let panier = JSON.parse(localStorage.getItem("monPanier"));
 console.log(panier);
-console.log("hello");
+
 
 //------
-// ----- SUPPRESSION DU PRODUIT DANS LE PANIER
+// ----- SUPPRESSION DU PRODUIT DANS LE PANIER  (*plan test)
 //------
 
 function suppressionArticle(i) {
@@ -44,7 +46,7 @@ function suppressionArticle(i) {
 }
 
 //------
-// ----- AFFICHAGE DU PANIER UTILISATEUR
+// ----- AFFICHAGE DU PANIER UTILISATEUR  (*plan test)
 //------
 
 function affichagePanier() {
@@ -93,7 +95,7 @@ const commandeUser = {
 };
 
 //------
-// ----- TEST INPUT DE VALIDATION DU FORMULAIRE
+// ----- TEST INPUT DE VALIDATION DU FORMULAIRE  (*plan test)
 //------
 function testRegex() {
   //prenom
@@ -149,7 +151,7 @@ function sendCommand(event) {
     alert(messageError);
   } else {
     //------
-    // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT
+    // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT  (*plan test)
     //------
 
     commandeUser.contact = {
@@ -167,7 +169,7 @@ function sendCommand(event) {
     );
 
     //------
-    // ----- ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE
+    // ----- ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE  (*plan test)
     //------
     const optionsFetch = {
       headers: {
@@ -178,9 +180,9 @@ function sendCommand(event) {
     };
 
     //------
-    // ----- TRAITEMENT DE LA REPONSE POUR SE DIRIGER VERS LA PAGE CONFIRMATION
+    // ----- TRAITEMENT DE LA REPONSE POUR SE DIRIGER VERS LA PAGE CONFIRMATION  (*plan test)
     //------
-    
+
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {
       response.json().then(function (resOrder) {
         console.log(resOrder.contact);
