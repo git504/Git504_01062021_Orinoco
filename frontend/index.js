@@ -11,8 +11,10 @@
 
 getPanierQuantity();
 
+//------
+// FETCH AFFICHER LE TABLEAU D'OBJET CAMERA
+//------
 
-// ----- AFFICHER LE TABLEAU D'OBJET CAMERA -----
 // Promise
 // fetch("monlien").then((res) => res);
 const getCams = function () {
@@ -23,7 +25,9 @@ const getCams = function () {
 getCams();
 console.log(getCams());
 
-// ----- AFFICHER LA LISTE SUR LA PAGE INDEX.HTML -----
+//------
+// ----- AFFICHER LA LISTE SUR LA PAGE INDEX.HTML 
+//------
 async function listeCams() {
   const cams = await getCams();
   // console.log(cams);

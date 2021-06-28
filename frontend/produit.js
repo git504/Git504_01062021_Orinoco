@@ -6,12 +6,13 @@ let produit = {};
 let articleExist = false;
 
 /*PRODUIT SELECTIONNE INDEX*/
-// const url = "http://localhost:3000/api/cameras";
 
 /*Création de la variable contenant l'id*/
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
-// console.log(camId);
+// faisant ref au dossier routes -> camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
+console.log(camId);
+
 let produitHtml = "";
 
 const afficherProduit = async () => {
