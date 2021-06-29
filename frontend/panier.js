@@ -11,14 +11,12 @@ let messageError = "";
 //Fonction affichant le nombre d'article dans le panier dans le nav.
 getPanierQuantity();
 
-
-
 //------
 // ----- AFFICHE TOTAL PRODUIT (*plan test)
 //------
 
 //On stock le prix total dans cette variable
-let total = 0; 
+let total = 0;
 
 //Création du panier utilisateur si besoin
 if (localStorage.getItem("monPanier")) {
@@ -32,7 +30,6 @@ if (localStorage.getItem("monPanier")) {
 //On stock le panier dans cette variable
 let panier = JSON.parse(localStorage.getItem("monPanier"));
 //console.log(panier);
-
 
 //------
 // ----- SUPPRESSION DU PRODUIT DANS LE PANIER  (*plan test)
@@ -75,7 +72,7 @@ function affichagePanier() {
     /*Création de la ligne du bas du tableau affichant le prix total de la commande*/
 
     JSON.parse(localStorage.getItem("monPanier")).forEach((specArticle) => {
-        total += (specArticle.price/100)*specArticle.quantity;
+      total += (specArticle.price / 100) * specArticle.quantity;
     });
 
     tableauFooterPrixTotal = document.querySelector(".tableauFooterLigne");
@@ -118,7 +115,8 @@ function testRegex() {
   //input ville
   console.log(inputRegex(villeForm.value));
   if (!inputRegex(villeForm.value)) {
-    messageError = "💡️ Votre VILLE ne doit pas contenir de caractères spéciaux.";
+    messageError =
+      "💡️ Votre VILLE ne doit pas contenir de caractères spéciaux.";
     inputError = true;
   }
 
@@ -155,7 +153,6 @@ function sendCommand(event) {
   } else if (inputError) {
     alert(messageError);
   } else {
-
     //------
     // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT  (*plan test)
     //------

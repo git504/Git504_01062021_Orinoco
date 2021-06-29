@@ -14,7 +14,6 @@ const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
 console.log(camId);
 
-
 //------
 // ----- AFFICHER LE PRODUIT (*plan test)
 //------
@@ -56,12 +55,20 @@ const afficherProduit = async () => {
                                  <div id="Descriptionproduit">
                                      <div class="Blockdescription">
                                          <div class="B1description">
-                                             <img src= ${produit.imageUrl} alt="Photographie de l'appareil." class="Imagedescription">
+                                             <img src= ${
+                                               produit.imageUrl
+                                             } alt="Photographie de l'appareil." class="Imagedescription">
                                         </div>
                                      <div class="B2description">
-                                            <h2 class="Nomdescription">${produit.name}</h2>
-                                             <p class="Prixdescription">${produit.price/100} &#8364;</p>
-                                            <p class="Descriptionproduit">${produit.description}</p>
+                                            <h2 class="Nomdescription">${
+                                              produit.name
+                                            }</h2>
+                                             <p class="Prixdescription">${
+                                               produit.price / 100
+                                             } &#8364;</p>
+                                            <p class="Descriptionproduit">${
+                                              produit.description
+                                            }</p>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +108,6 @@ function ajouterAuPanier() {
     quantity: parseInt(nombreArticle.value),
   };
   // console.log(article);
-
 
   //------
   // ----- CHOIX DE LA LENTILLE (*plan test)

@@ -26,17 +26,21 @@ async function listeCams() {
   let produits = document.getElementById("Produits");
   let listOfCam = "";
 
-  // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map. 
+  // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map.
   cams.map((cam) => {
     listOfCam += `
       <div class="Block">
           <div class="B1">
-            <img src= ${cam.imageUrl} alt="image du produit" class="Imageproduit">
+            <img src= ${
+              cam.imageUrl
+            } alt="image du produit" class="Imageproduit">
           </div>
           <div class="B2">
                       <h2 class="Nomproduits">${cam.name}</h2>
-                      <p class="Prixproduit">${cam.price/100} &#8364;</p>
-                      <a href="produit.html?id=${cam._id}" style="color: rgb(49, 49, 49); font-weight: bold;">En savoir plus ...</a>
+                      <p class="Prixproduit">${cam.price / 100} &#8364;</p>
+                      <a href="produit.html?id=${
+                        cam._id
+                      }" style="color: rgb(49, 49, 49); font-weight: bold;">En savoir plus ...</a>
           </div>
       </div>
       `;
