@@ -9,10 +9,11 @@ let articleExist = false;
 // ----- PRODUIT SELECTIONNE PAR ID API (*plan test)
 //------
 
-// Création de la variable contenant l'id faisant REF. au dossier backend/routes/camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
+// camId faisant REF. a backend/routes/camera.js -> router.get('/:id', cameraCtrl.getOneCamera);
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
 console.log(camId);
+
 
 //------
 // ----- AFFICHER LE PRODUIT (*plan test)
@@ -39,17 +40,14 @@ const afficherProduit = async () => {
       };
       console.log(article);
 
-      //------
-      // ----- CHOIX DES LENTILLES (*plan test)
-      //------
-
-      //Boucle forEach pour implémenter une  liste 'déroulante'
+      //Liste 'déroulante' forEach produit.lense
       produit.lenses.forEach((lense) => {
         lenses += `                               
             <option value="${lense}">${lense}</option>
             `;
       });
 
+      //Présentation du produit
       produitHtml = `
                                  <label for="lentille">Type de lentille :</label><br>
                                 <select name="lentille" id="lentille">
@@ -62,7 +60,7 @@ const afficherProduit = async () => {
                                         </div>
                                      <div class="B2description">
                                             <h2 class="Nomdescription">${produit.name}</h2>
-                                             <p class="Prixdescription">${produit.price}</p>
+                                             <p class="Prixdescription">${produit.price/100} &#8364;</p>
                                             <p class="Descriptionproduit">${produit.description}</p>
                                         </div>
                                     </div>
@@ -85,11 +83,12 @@ getPanierQuantity();
 //------
 // ----- AJOUTER UN PRODUIT AU PANIER (*plan test)
 //------
+
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
   console.log(lenseIntoBag.value);
   //const lenseIntoBag = document.getElementById("lentille");
-  alert(nombreArticle.value + " dans le panier ...");
+  alert("👍 " + nombreArticle.value + " dans le panier ...");
   // intoBag.textContent = nombreArticle.value;
 
   article = {
@@ -103,11 +102,12 @@ function ajouterAuPanier() {
   };
   // console.log(article);
 
+
   //------
   // ----- CHOIX DE LA LENTILLE (*plan test)
   //------
 
-  // 'panierBag' est dans le 'localstorage' en 'JSON', l'objectif est de ne pas créer un objet supplémentaire pour un article identique '_id' avec une même lentille 'lense'.
+  // "panierBag" est dans le "localstorage" en 'JSON', l'objectif est de ne pas créer un objet supplémentaire pour un article identique : '_id' && 'lense'.
   panierBag.forEach((prod, index) => {
     if (prod.name == article.name && prod.lense == article.lense) {
       prod.quantity = prod.quantity + article.quantity;
@@ -125,13 +125,6 @@ function ajouterAuPanier() {
   // Il faut passer des chaines de caractères
   localStorage.setItem("monPanier", JSON.stringify(panierBag));
   let panier = JSON.parse(localStorage.getItem("monPanier"));
-
-  // ce code est rendu inutile grace a location reload
-  // let somme = 0;
-  // panier.forEach((produit) => {
-  //   somme = somme + produit.quantity;
-  // });
-  // intoBag.textContent = somme;
 
   //------
   // ----- METTRE A JOUR LE PANIER

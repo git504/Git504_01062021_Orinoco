@@ -1,21 +1,10 @@
-// API
-
-/*Appel de l'API*/
-
-// convert in asyn function
-// const getCams = async function () {
-//     const response = await fetch(url);
-//     return await response.json();
-// }
-// getCams();
-
 getPanierQuantity();
 
 //------
-// FETCH Get Cams de l’API - AFFICHER LE TABLEAU D'OBJET CAMERA (*plan test)
+// FETCH APPEL DE l’API (*plan test)
 //------
 
-// Promise
+// Promise pour afficher array + objet
 // fetch("monlien").then((res) => res);
 const getCams = function () {
   return fetch(getUrl()).then(function (response) {
@@ -26,7 +15,7 @@ getCams();
 console.log(getCams());
 
 //------
-// ----- AFFICHER LA LISTE DES CAMERAS SUR LA PAGE INDEX.HTML (*plan test)
+// ----- AFFICHER LA LISTE DES CAMERAS (*plan test)
 //------
 async function listeCams() {
   const cams = await getCams();
@@ -46,7 +35,7 @@ async function listeCams() {
           </div>
           <div class="B2">
                       <h2 class="Nomproduits">${cam.name}</h2>
-                      <p class="Prixproduit">${cam.price}</p>
+                      <p class="Prixproduit">${cam.price/100} &#8364;</p>
                       <a href="produit.html?id=${cam._id}" style="color: rgb(49, 49, 49); font-weight: bold;">En savoir plus ...</a>
           </div>
       </div>

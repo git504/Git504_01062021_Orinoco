@@ -12,11 +12,12 @@ let messageError = "";
 getPanierQuantity();
 
 
+
 //------
 // ----- AFFICHE TOTAL PRODUIT (*plan test)
 //------
 
-//On stock le prix total dans cette variable afin de l'afficher dans le tableau et dans l'URL
+//On stock le prix total dans cette variable
 let total = 0; 
 
 //Création du panier utilisateur si besoin
@@ -30,7 +31,7 @@ if (localStorage.getItem("monPanier")) {
 
 //On stock le panier dans cette variable
 let panier = JSON.parse(localStorage.getItem("monPanier"));
-console.log(panier);
+//console.log(panier);
 
 
 //------
@@ -65,7 +66,7 @@ function affichagePanier() {
 <td>${article.name}</td>
 <td>${article.lense}</td>
 <td>${article.quantity}</td>
-<td>${article.price / 100}</td>
+<td>${article.price / 100}&#8364;</td>
 <td class="fas fa-trash-alt" onclick="suppressionArticle(${index})"></td>
 </tr>`;
     });
@@ -73,8 +74,8 @@ function affichagePanier() {
 
     /*Création de la ligne du bas du tableau affichant le prix total de la commande*/
 
-    JSON.parse(localStorage.getItem("monPanier")).forEach((priceArticle) => {
-      total += priceArticle.price / 100;
+    JSON.parse(localStorage.getItem("monPanier")).forEach((specArticle) => {
+        total += (specArticle.price/100)*specArticle.quantity;
     });
 
     tableauFooterPrixTotal = document.querySelector(".tableauFooterLigne");
@@ -98,42 +99,42 @@ const commandeUser = {
 // ----- TEST INPUT DE VALIDATION DU FORMULAIRE  (*plan test)
 //------
 function testRegex() {
-  //prenom
+  //input prénom
   console.log(inputRegex(prenomForm.value));
   if (!inputRegex(prenomForm.value)) {
     messageError =
-      "Votre PRENOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
+      "💡️ Votre PRENOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
     inputError = true;
   }
 
-  //nom
+  //input nom
   console.log(inputRegex(nomForm.value));
   if (!inputRegex(nomForm.value)) {
     messageError =
-      "Votre NOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
+      "💡️ Votre NOM doit contenir au moins 1 lettre sans caractères spéciaux et sans chiffres.";
     inputError = true;
   }
 
-  //ville
+  //input ville
   console.log(inputRegex(villeForm.value));
   if (!inputRegex(villeForm.value)) {
-    messageError = "Votre VILLE ne doit pas contenir de caractères spéciaux.";
+    messageError = "💡️ Votre VILLE ne doit pas contenir de caractères spéciaux.";
     inputError = true;
   }
 
-  //mail
+  //input mail
   console.log(inputRegexMail(emailForm.value));
   if (!inputRegexMail(emailForm.value)) {
     messageError =
-      "Votre MAIL ne doit pas contenir de caractères spéciaux et doit contenir @ et un .";
+      "💡️ Votre MAIL ne doit pas contenir de caractères spéciaux et doit contenir @ et un .";
     inputError = true;
   }
 
-  //adresse
+  //input adresse
   console.log(inputRegexAdresse(adresseForm.value));
   if (!inputRegexAdresse(adresseForm.value)) {
     messageError =
-      "Votre ADRESSE POSTALE ne doit pas contenir dde  caractères spéciaux.";
+      "💡️ Votre ADRESSE POSTALE ne doit pas contenir dde  caractères spéciaux.";
     inputError = true;
   }
 }
@@ -150,7 +151,7 @@ function sendCommand(event) {
 
   //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide et que le formulaire est true.
   if (panier.length == 0) {
-    alert("Votre panier est vide.");
+    alert("💡️ Votre panier est vide.");
   } else if (inputError) {
     alert(messageError);
   } else {
@@ -175,7 +176,7 @@ function sendCommand(event) {
     );
 
     //------
-    // ----- POST DE LA COMMANDE : ENVOI AU BACKEND DES DONNEES RECUPEREES DEPUIS LE LOCALSTORAGE  (*plan test)
+    // ----- POST DE LA COMMANDE AU "BACKEND" DES DONNÉES RÉCUPÉRÉES DEPUIS LE "LOCALSTORAGE" (*plan test)
     //------
     const optionsFetch = {
       headers: {
