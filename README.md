@@ -21,10 +21,6 @@ Aucune maquette n'est donnée. Il est demandé d'improviser l'interface utilisat
 
 Pour en savoir plus, veuillez consulter le ***document complet*** disponible [ici](<https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P5/P5_Spe%CC%81cifications%20fonctionnelles%20Orinoco%20(2).pdf>)
 
-### TODO
-
-- [x] Vérifier que les inputs sont corrects avant l'envoi au back-end
-- [x] Terminer plan de test
 ### Général
 
 - [x] Création d'une page présentant tous les produits
