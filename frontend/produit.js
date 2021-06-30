@@ -91,6 +91,11 @@ getPanierQuantity();
 // ----- AJOUTER UN PRODUIT AU PANIER (*plan test)
 //------
 
+function selectNbreArticle() {
+  alert("hello");
+}
+
+
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
   console.log(lenseIntoBag.value);
