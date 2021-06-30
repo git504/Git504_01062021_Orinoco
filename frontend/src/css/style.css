@@ -8,6 +8,13 @@
 
 }
 
+.alert.alert-danger {
+  display: none;
+}
+.alert.alert-success {
+  display: none;
+}
+
 .fas.fa-trash-alt:hover {
   color: red;
   cursor: pointer;

@@ -1,6 +1,8 @@
 let btnAjouter = document.getElementById("Boutonpanier");
 let divProduit = document.getElementById("Selectionproduit");
 let nombreArticle = document.getElementById("Nombre");
+let alertAjoutpanier = document.querySelector(".ajoutpanierok");
+let messageSuccess = document.querySelector(".alert.alert-success");
 let article = {};
 let produit = {};
 let articleExist = false;
@@ -63,9 +65,9 @@ const afficherProduit = async () => {
                                             <h2 class="Nomdescription">${
                                               produit.name
                                             }</h2>
-                                             <p class="Prixdescription">${
+                                             <p class="Prixdescription"><span id="prixQuantity">${
                                                produit.price / 100
-                                             } &#8364;</p>
+                                             } </span>&#8364;</p>
                                             <p class="Descriptionproduit">${
                                               produit.description
                                             }</p>
@@ -92,22 +94,23 @@ getPanierQuantity();
 //------
 
 function selectNbreArticle() {
-  alert("hello");
+  prixQuantity.innerHTML = nombreArticle.value * (produit.price / 100);
 }
-
 
 function ajouterAuPanier() {
   const lenseIntoBag = document.getElementById("lentille");
   console.log(lenseIntoBag.value);
   //const lenseIntoBag = document.getElementById("lentille");
-  alert("👍 " + nombreArticle.value + " dans le panier ...");
+  //alert("👍 " + nombreArticle.value + " dans le panier ...");
+  messageSuccess.style.display = "block";
+  alertAjoutpanier.innerHTML = "👍 " + nombreArticle.value + " dans le panier ..."
   // intoBag.textContent = nombreArticle.value;
 
   article = {
     _id: produit._id,
     imgUrl: produit.imageUrl,
     name: produit.name,
-    price: produit.price,
+    price: produit.price * parseInt(nombreArticle.value),
     description: produit.description,
     lense: lenseIntoBag.value,
     quantity: parseInt(nombreArticle.value),

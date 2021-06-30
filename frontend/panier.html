@@ -15,6 +15,8 @@
         <!-- Link Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <body>
+
+
         <!--HEADER-->
         <header>
             <div class="container-fluid-nav">
@@ -39,7 +41,12 @@
                         <h1 class="text-center">Votre panier</h1>
                     </div>
                 </div>
-
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong class="errors"></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
                 <div class="row text-center" id="mainform">
                     <div class="col" id="leftform">
 
@@ -70,9 +77,12 @@
                             <p id="panierVide">Votre panier est vide</p>
                         </div>
                     </div>
+
+
                     <div class="col" id="rightform">
                         <div id="Sectionformulaire">
                             <p>IDENTIFICATION</p>
+                            
                             <form method="post" onsubmit="sendCommand(event)" id="formulaire">
                                 <fieldset> <!--Identité-->
                                     <legend>Civilité</legend>

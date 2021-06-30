@@ -5,6 +5,8 @@ let emailForm = document.getElementById("Email");
 let adresseForm = document.getElementById("Adresse");
 let villeForm = document.getElementById("Ville");
 let codePostalForm = document.getElementById("Codepostal");
+let alertErrors = document.querySelector(".errors");
+let divAlert = document.querySelector(".alert.alert-danger");
 let inputError = false;
 let messageError = "";
 
@@ -72,7 +74,7 @@ function affichagePanier() {
     /*Création de la ligne du bas du tableau affichant le prix total de la commande*/
 
     JSON.parse(localStorage.getItem("monPanier")).forEach((specArticle) => {
-      total += (specArticle.price / 100) * specArticle.quantity;
+      total += specArticle.price / 100;
     });
 
     tableauFooterPrixTotal = document.querySelector(".tableauFooterLigne");
@@ -151,7 +153,8 @@ function sendCommand(event) {
   if (panier.length == 0) {
     alert("💡️ Votre panier est vide.");
   } else if (inputError) {
-    alert(messageError);
+    divAlert.style.display = "block";
+    alertErrors.textContent = messageError;
   } else {
     //------
     // ----- CREATION DE L'OBJET 'commandeUser' CONTACT + ARRAY PRODUCT  (*plan test)
