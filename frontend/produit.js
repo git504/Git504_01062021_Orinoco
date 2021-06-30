@@ -102,8 +102,10 @@ function ajouterAuPanier() {
   console.log(lenseIntoBag.value);
   //const lenseIntoBag = document.getElementById("lentille");
   //alert("👍 " + nombreArticle.value + " dans le panier ...");
-  messageSuccess.style.display = "block";
-  alertAjoutpanier.innerHTML = "👍 " + nombreArticle.value + " dans le panier ..."
+
+    messageSuccess.style.display = "block";
+    alertAjoutpanier.innerHTML =
+      "👍 " + nombreArticle.value + " dans le panier ...";
   // intoBag.textContent = nombreArticle.value;
 
   article = {
@@ -143,6 +145,7 @@ function ajouterAuPanier() {
   //------
   // ----- METTRE A JOUR LE PANIER
   //------
-  location.reload();
+
+  setTimeout(function(){ location.reload();; }, 1500);
   console.log(panier);
 }
