@@ -7,7 +7,7 @@ function getUrl() {
   return "http://localhost:3000/api/cameras";
 }
 
-//affiche la qté ds le localestorage - en dehors de tt scope; fonctionne grace location reload
+//Affiche la qté ds le localestorage - en dehors de tt scope; fonctionne grace location reload
 function getPanierQuantity() {
   panierBag = JSON.parse(localStorage.getItem("monPanier"));
   console.log(panierBag);

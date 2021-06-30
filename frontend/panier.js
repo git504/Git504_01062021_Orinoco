@@ -151,7 +151,8 @@ function sendCommand(event) {
 
   //Avant d'envoyer un formulaire, vérification que le panier n'est pas vide et que le formulaire est true.
   if (panier.length == 0) {
-    alert("💡️ Votre panier est vide.");
+    divAlert.style.display = "block";
+    alertErrors.textContent = "💡️ Votre panier est vide";
   } else if (inputError) {
     divAlert.style.display = "block";
     alertErrors.textContent = messageError;
