@@ -5,6 +5,7 @@ getPanierQuantity();
 //------
 
 // Promise pour afficher array + objet
+//  5 objets simples et uniques.
 // fetch("monlien").then((res) => res);
 const getCams = function () {
   return fetch(getUrl()).then(function (response) {
@@ -26,7 +27,7 @@ async function listeCams() {
   let produits = document.getElementById("Produits");
   let listOfCam = "";
 
-  // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map.
+  // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map. $ = STRING INTERPOLATION
   cams.map((cam) => {
     listOfCam += `
       <div class="Block">
