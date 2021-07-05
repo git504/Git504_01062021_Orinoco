@@ -77,6 +77,7 @@ function affichagePanier() {
       total += specArticle.price / 100;
     });
 
+    sessionStorage.setItem("totalPanier", total);
     tableauFooterPrixTotal = document.querySelector(".tableauFooterLigne");
 
     tableauFooterPrixTotal.textContent = "Prix total: " + total + " euros";
@@ -193,10 +194,11 @@ function sendCommand(event) {
 
     fetch(getUrl() + "/order", optionsFetch).then(function (response) {
       response.json().then(function (resOrder) {
-        console.log(resOrder.contact);
-        window.location = `./confirmation.html?id=${resOrder.orderId}&name=${resOrder.contact.firstName}&prix=${total}`;
+        console.log(resOrder);
+        localStorage.setItem("resOrder", JSON.stringify(resOrder));
+        window.location = "./confirmation.html";
       });
     });
-    localStorage.clear();
   }
 }
+localStorage.clear();
