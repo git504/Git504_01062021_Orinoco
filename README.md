@@ -36,7 +36,7 @@ Pour en savoir plus, veuillez consulter le ***document complet*** disponible [ic
 
 ### Tester le site en ligne
 
-Pour tester simplement l'application web, rendez-vous sur [github.com/git504](https://git504.github.io/Orinoco/)
+Pour tester simplement l'application web, rendez-vous sur [github.com/git504](https://git504.github.io/Git504_01062021_Orinoco/)
 
 #### Lancement de l'application
 
